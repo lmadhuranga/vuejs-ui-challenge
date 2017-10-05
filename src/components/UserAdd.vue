@@ -30,9 +30,10 @@
       },
 
       addUser: function (user) {
-        user.id = this.randNumber()
-        this.people.push(user)
-        this.user = {name:''}
+        user.id = this.randNumber();
+        this.people.push(user);
+        this.user = {name:''};
+        this.$router.push('/');
       }
     }
   }
