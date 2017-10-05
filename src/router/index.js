@@ -4,13 +4,20 @@ import Home from '@/components/Home'
 import UserAdd from '@/components/UserAdd'
 import PeopleListing from '@/components/PeopleListing'
 import PersonDetail from '@/components/PersonDetail'
+import Vuetify from 'vuetify'
 
-Vue.use(Router)
+Vue.use(Vuetify);
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: '/',
+      name: 'home',
+      component: Home
+    }
+    ,{
+      path: '/user',
       name: 'user',
       component: PeopleListing
     }
