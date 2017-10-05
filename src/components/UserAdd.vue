@@ -1,44 +1,62 @@
-<template id="people-listing-template">
-    <v-app id="inspire">
-        <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
-                <v-card>
-                    <v-toolbar class="teal white--text" dark>
-                        <v-toolbar-side-icon></v-toolbar-side-icon>
-                        <v-toolbar-title>Add User</v-toolbar-title>
-                        <v-spacer></v-spacer>
-                        <v-btn icon>
-                            <v-icon>more_vert</v-icon>
-                        </v-btn>
-                    </v-toolbar>
-                    <v-form v-model="valid" ref="form" lazy-validation>
-                        <v-text-field
-                                label="Name"
-                                v-model="user.name"
-                                :rules="nameRules"
-                                :counter="10"
-                                required
-                        ></v-text-field>
-                        <v-text-field
-                                label="E-mail"
-                                v-model="user.email"
-                                :rules="emailRules"
-                                required
-                        ></v-text-field>
+<template>
+    <v-app toolbar--fixed toolbar style="overflow: hidden">
+        <v-toolbar
+                absolute
+                class="white teal lighten-3"
+                dark
+                scroll-off-screen
+                scroll-target="#scrolling-techniques"
+        >
 
-                        <v-btn
-                                @click="addUser(user)"
-                                :disabled="!valid"
-                        >
-                            submit
-                        </v-btn>
-                        <v-btn @click="clear">clear</v-btn>
-                    </v-form>
-                </v-card>
-            </v-flex>
-        </v-layout>
+            <v-btn icon class="hidden-xs-only">
+                <router-link :to="{ name: '/'}"><v-icon>arrow_back</v-icon></router-link>
+            </v-btn>
+            <v-toolbar-title>Add User</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-btn icon>
+                <v-icon>search</v-icon>
+            </v-btn>
+            <v-btn icon>
+                <v-icon>favorite</v-icon>
+            </v-btn>
+            <v-btn icon>
+                <v-icon>more_vert</v-icon>
+            </v-btn>
+        </v-toolbar>
+        <main
+                style="max-height: 600px;"
+                class="scroll-y"
+                id="scrolling-techniques"
+        >
+            <v-container>
+                <v-form v-model="valid" ref="form" lazy-validation>
+                    <v-text-field
+                            label="Name"
+                            v-model="user.name"
+                            :rules="nameRules"
+                            :counter="10"
+                            required
+                    ></v-text-field>
+                    <v-text-field
+                            label="E-mail"
+                            v-model="user.email"
+                            :rules="emailRules"
+                            required
+                    ></v-text-field>
+
+                    <v-btn
+                            @click="addUser(user)"
+                            :disabled="!valid"
+                    >
+                        Add User
+                    </v-btn>
+                    <v-btn @click="clear">clear</v-btn>
+                </v-form>
+            </v-container>
+        </main>
     </v-app>
 </template>
+
 
 <script>
 
