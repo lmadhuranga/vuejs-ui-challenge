@@ -9,7 +9,7 @@ export default {
   name: 'app',
   data () { 
       return  {
-        people: [ ]
+        people: [{id:1, name:'madhuranga', about:'hi', email:'my@gmail.com'}]
       }
         
     }
