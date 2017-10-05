@@ -2,16 +2,16 @@
   <div>
     <router-link to="/">Homepage</router-link>
     <h1>{{title}}</h1>
-    <input type="text" placeholder="Name" v-model="user.name"> 
-    <input type="text" placeholder="Email" v-model="user.email"> 
+    <input type="text" placeholder="Name" v-model="user.name">
+    <input type="text" placeholder="Email" v-model="user.email">
     <button v-on:click="addUser(user)" class="tiny radius">Add User</button>
   </div>
 </template>
 
 <script>
-  
+
   export default {
-    data () { 
+    data () {
       return  {
         user:{
           name:''
@@ -21,12 +21,12 @@
     },
     props: ['people'],
     computed: {
-           
+
         },
     methods: {
       //Todo:: bring to computed object
       randNumber: function() {
-          return Math.floor(Math.random() * (25 - 1 + 1)) + 1;
+          return (this.people.length+1);
       },
 
       addUser: function (user) {
