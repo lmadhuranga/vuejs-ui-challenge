@@ -8,20 +8,12 @@
                 scroll-target="#scrolling-techniques"
         >
 
-            <v-btn icon class="hidden-xs-only">
-                <router-link :to="{ name: '/'}"><v-icon>arrow_back</v-icon></router-link>
+            <v-btn icon class="hidden-xs-only" @click="toHome()">
+                <v-icon>arrow_back</v-icon>
             </v-btn>
             <v-toolbar-title>Add User</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn icon>
-                <v-icon>search</v-icon>
-            </v-btn>
-            <v-btn icon>
-                <v-icon>favorite</v-icon>
-            </v-btn>
-            <v-btn icon>
-                <v-icon>more_vert</v-icon>
-            </v-btn>
+
         </v-toolbar>
         <main
                 style="max-height: 600px;"
@@ -88,7 +80,10 @@
             },
             clear () {
                 this.$refs.form.reset()
-            }
+            },
+            toHome: function () {
+                this.$router.push('/');
+            },
         }
 //        methods: {
 //            //Todo:: bring to computed object

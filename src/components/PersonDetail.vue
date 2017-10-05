@@ -7,10 +7,8 @@
                 scroll-off-screen
                 scroll-target="#scrolling-techniques"
         >
-            <v-btn icon class="hidden-xs-only">
-                <router-link :to="{ name: 'home'}">
-                    <v-icon>arrow_back</v-icon>
-                </router-link>
+            <v-btn icon class="hidden-xs-only" @click="toHome()">
+                <v-icon>arrow_back</v-icon>
             </v-btn>
             <v-toolbar-title>{{ user.name }}</v-toolbar-title>
             <v-spacer></v-spacer>
@@ -41,6 +39,11 @@
                     return user.id == route.params.id;
                 })[0]
             };
+        },
+        methods: {
+            toHome: function () {
+                this.$router.push('/');
+            },
         }
     }
 </script>
