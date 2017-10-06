@@ -1,20 +1,6 @@
-<template>
+<template id="userAdd">
     <v-app toolbar--fixed toolbar style="overflow: hidden">
-        <v-toolbar
-                absolute
-                class="white teal lighten-3"
-                dark
-                scroll-off-screen
-                scroll-target="#scrolling-techniques"
-        >
-
-            <v-btn icon class="hidden-xs-only btn-arrow-back" @click="toHome()">
-                <v-icon>arrow_back</v-icon>
-            </v-btn>
-            <v-toolbar-title>Add User</v-toolbar-title>
-            <v-spacer></v-spacer>
-
-        </v-toolbar>
+        <nav-bar title="New User" :isNew="true"></nav-bar>
         <main
                 style="max-height: 600px;"
                 class="scroll-y"
@@ -51,11 +37,17 @@
 
 
 <script>
+
+    import NavBar from "./template/NavBar.vue";
+
     export default {
+        components: {
+            NavBar,
+        },
         props: ['people'],
         data: () => ({
             valid: true,
-            user:{name:'', email:''},
+            user: {name: '', email: ''},
             nameRules: [
                 (v) => !!v || 'Name is required',
                 (v) => v && v.length <= 10 || 'Name must be less than 10 characters'

@@ -1,18 +1,6 @@
-<template>
+<template id="personDetails">
     <v-app toolbar--fixed toolbar style="overflow: hidden">
-        <v-toolbar
-                absolute
-                class="white teal lighten-3"
-                dark
-                scroll-off-screen
-                scroll-target="#scrolling-techniques"
-        >
-            <v-btn icon class="hidden-xs-only" @click="toHome()">
-                <v-icon>arrow_back</v-icon>
-            </v-btn>
-            <v-toolbar-title class="user-name">{{ user.name }}</v-toolbar-title>
-            <v-spacer></v-spacer>
-        </v-toolbar>
+        <nav-bar :title="user.name" :isNew="true"></nav-bar>
         <main
                 style="max-height: 600px;"
                 class="scroll-y"
@@ -29,7 +17,13 @@
     </v-app>
 </template>
 <script>
+
+    import NavBar from "./template/NavBar.vue";
+
     export default {
+        components: {
+            NavBar,
+        },
         name: 'userDetail',
         props: ['people'],
         data: function () {
