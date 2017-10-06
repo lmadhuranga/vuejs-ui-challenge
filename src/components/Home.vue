@@ -7,7 +7,9 @@
             scroll-off-screen
             scroll-target="#scrolling-techniques"
     >
-      <v-toolbar-side-icon></v-toolbar-side-icon>
+      <v-btn icon class="hidden-xs-only" @click="toAdd()">
+        <v-icon>person_outline</v-icon>
+      </v-btn>
       <v-toolbar-title>Home Page</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
@@ -21,7 +23,7 @@
           <v-list-group :value="true" v-bind:key="0">
             <v-list-tile slot="item" @click="">
               <v-list-tile-action>
-                <v-icon>restaurant</v-icon>
+                <v-icon>person_outline</v-icon>
               </v-list-tile-action>
               <v-list-tile-content>
                 <v-list-tile-title>Users</v-list-tile-title>
@@ -48,7 +50,13 @@
                 </v-list-tile-title>
               </v-list-tile-content>
               <v-list-tile-action>
-                <!--<v-icon>{{ subItem.action }}</v-icon>-->
+                <v-flex xs5>
+                  <v-card-media
+                          src="https://robohash.org/{{person.name}}"
+                          height="125px"
+                          contain
+                  ></v-card-media>
+                </v-flex>
               </v-list-tile-action>
             </v-list-tile>
           </v-list-group>
@@ -62,6 +70,11 @@
 
 <script>
     export default {
-        props: ['people']
+        props: ['people'],
+        methods: {
+            toAdd: function () {
+                this.$router.push('/add');
+            },
+        }
     }
 </script>
