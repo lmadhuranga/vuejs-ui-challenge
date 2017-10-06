@@ -1,6 +1,6 @@
 <template>
     <v-app toolbar--fixed toolbar style="overflow: hidden">
-        <nav-bar title="Home Page" isNew="false"></nav-bar>
+        <nav-bar title="Home Page" :isNew="false"></nav-bar>
         <main
                 style="max-height: 600px;"
                 class="scroll-y"
@@ -22,11 +22,7 @@
             SideMenu,
             PeopleListing,
         },
-        props: ['people'],
-        methods: {
-            toAdd: function () {
-                this.$router.push('/add');
-            },
-        }
+        props: ['people']
+
     }
 </script>

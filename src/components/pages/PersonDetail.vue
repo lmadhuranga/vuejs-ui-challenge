@@ -33,11 +33,6 @@
                     return user.id == route.params.id;
                 })[0]
             };
-        },
-        methods: {
-            toHome: function () {
-                this.$router.push('/');
-            },
         }
     }
 </script>

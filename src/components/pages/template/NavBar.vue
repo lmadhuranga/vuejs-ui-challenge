@@ -19,6 +19,14 @@
 <script>
     export default {
         name: 'NavBar',
-        props: ['isNew', 'title']
+        props: ['isNew', 'title'],
+        methods: {
+            toAdd: function () {
+                this.$router.push('/add');
+            },
+            toHome: function () {
+                this.$router.push('/');
+            }
+        }
     }
 </script>
