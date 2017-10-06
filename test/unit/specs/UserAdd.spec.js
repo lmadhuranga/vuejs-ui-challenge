@@ -34,6 +34,4 @@ describe('UserAdd.vue', () => {
         expect(AddUserComponent.people[0].name).to.equal(expectedPeople[0].name);
         expect(AddUserComponent.people[0].email).to.equal(expectedPeople[0].email);
     });
-
-
 });

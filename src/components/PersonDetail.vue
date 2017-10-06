@@ -10,7 +10,7 @@
             <v-btn icon class="hidden-xs-only" @click="toHome()">
                 <v-icon>arrow_back</v-icon>
             </v-btn>
-            <v-toolbar-title>{{ user.name }}</v-toolbar-title>
+            <v-toolbar-title class="user-name">{{ user.name }}</v-toolbar-title>
             <v-spacer></v-spacer>
         </v-toolbar>
         <main
@@ -19,7 +19,7 @@
                 id="scrolling-techniques"
         >
             <v-container>
-                <h1>{{ user.name }}</h1>
+                <h3>{{ user.name }}</h3>
                 <h4>Email</h4>
                 <p>{{ user.email }}</p>
                 <h4>About</h4>

@@ -15,3 +15,7 @@ testsContext.keys().forEach(testsContext)
 // you want coverage for.
 const srcContext = require.context('../../src', true, /^\.\/(?!main(\.js)?$)/)
 srcContext.keys().forEach(srcContext)
+
+if (typeof window !== 'undefined' && window.Vue) {
+    window.Vue.use(plugin)
+}
