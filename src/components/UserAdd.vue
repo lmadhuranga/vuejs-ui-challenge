@@ -42,7 +42,6 @@
                     >
                         Add User
                     </v-btn>
-                    <v-btn @click="clear">clear</v-btn>
                 </v-form>
             </v-container>
         </main>
@@ -78,18 +77,10 @@
                 this.user = {name: ''};
                 this.$router.push('/');
             },
-            clear () {
-                this.$refs.form.reset()
-            },
             toHome: function () {
                 this.$router.push('/');
             },
         }
-//        methods: {
-//            //Todo:: bring to computed object
-//
-//        },
-
     }
 </script>
 

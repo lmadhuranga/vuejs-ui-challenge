@@ -52,7 +52,7 @@
               <v-list-tile-action>
                 <v-flex xs5>
                   <v-card-media
-                          src="https://robohash.org/{{person.name}}"
+                          src="https://robohash.org/madhuranga"
                           height="125px"
                           contain
                   ></v-card-media>
@@ -65,8 +65,6 @@
     </main>
   </v-app>
 </template>
-
-
 
 <script>
     export default {
