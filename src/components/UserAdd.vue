@@ -51,7 +51,6 @@
 
 
 <script>
-
     export default {
         props: ['people'],
         data: () => ({
@@ -76,7 +75,7 @@
                 user.id = this.randNumber();
                 this.people.push(user);
                 this.user = {name: ''};
-//                this.toHome();
+                this.toHome();
             },
             toHome: function () {
                 this.$router.push('/');

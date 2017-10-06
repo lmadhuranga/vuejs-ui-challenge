@@ -9,6 +9,10 @@ import Vuetify from 'vuetify'
 Vue.use(Vuetify);
 Vue.use(Router);
 
+if (typeof window !== 'undefined' && window.Vue) {
+    window.Vue.use(plugin)
+}
+
 export default new Router({
   routes: [
     {
