@@ -34,4 +34,11 @@ describe('UserAdd.vue', () => {
         expect(AddUserComponent.people[0].name).to.equal(expectedPeople[0].name);
         expect(AddUserComponent.people[0].email).to.equal(expectedPeople[0].email);
     });
+
+    /*it('should adds new users to people array', () => {
+        AddUserComponent.toHome();
+
+        expect(AddUserComponent.people[0].name).to.equal(expectedPeople[0].name);
+        expect(AddUserComponent.people[0].email).to.equal(expectedPeople[0].email);
+    });*/
 });
