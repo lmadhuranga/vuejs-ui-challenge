@@ -8,7 +8,7 @@
                 scroll-target="#scrolling-techniques"
         >
 
-            <v-btn icon class="hidden-xs-only" @click="toHome()">
+            <v-btn icon class="hidden-xs-only btn-arrow-back" @click="toHome()">
                 <v-icon>arrow_back</v-icon>
             </v-btn>
             <v-toolbar-title>Add User</v-toolbar-title>
@@ -37,6 +37,7 @@
                     ></v-text-field>
 
                     <v-btn
+                            class="btn-add-user"
                             @click="addUser(user)"
                             :disabled="!valid"
                     >
@@ -75,7 +76,7 @@
                 user.id = this.randNumber();
                 this.people.push(user);
                 this.user = {name: ''};
-                this.$router.push('/');
+//                this.toHome();
             },
             toHome: function () {
                 this.$router.push('/');
