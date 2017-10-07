@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/pages/HomePage'
 import UserAdd from '@/components/pages/UserAdd'
-import PersonDetail from '@/components/pages//PersonDetail'
+import UserView from '@/components/pages/UserView'
 import Vuetify from 'vuetify'
 
 Vue.use(Vuetify);
@@ -18,16 +18,16 @@ export default new Router({
             path: '/',
             name: 'home',
             component: Home
-        }
-        , {
+        },
+        {
             path: '/add',
             name: 'add',
             component: UserAdd
-        }
-        , {
+        },
+        {
             path: '/:id',
-            name: 'person',
-            component: PersonDetail
+            name: 'userView',
+            component: UserView
         }
     ]
 })

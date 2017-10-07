@@ -6,23 +6,23 @@
                 class="scroll-y"
                 id="scrolling-techniques"
         >
-            <side-menu :people="people"></side-menu>
+            <side-menu :users="users"></side-menu>
         </main>
     </v-app>
 </template>
 
 <script>
-    import PeopleListing from "../person/PeopleListing.vue";
-    import SideMenu from "./template/SideBar.vue";
-    import NavBar from "./template/NavBar.vue";
+    import UserList from "../user/UsersList.vue";
+    import SideMenu from "../template/SideBar.vue";
+    import NavBar from "../template/NavBar.vue";
 
     export default {
         components: {
             NavBar,
             SideMenu,
-            PeopleListing,
+            UserList,
         },
-        props: ['people']
+        props: ['users']
 
     }
 </script>

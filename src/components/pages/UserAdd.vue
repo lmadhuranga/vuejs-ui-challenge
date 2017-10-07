@@ -38,13 +38,13 @@
 
 <script>
 
-    import NavBar from "./template/NavBar.vue";
+    import NavBar from "../template/NavBar.vue";
 
     export default {
         components: {
             NavBar,
         },
-        props: ['people'],
+        props: ['users'],
         data: () => ({
             valid: true,
             user: {name: '', email: ''},
@@ -60,12 +60,12 @@
         }),
         methods: {
             randNumber: function () {
-                return (this.people.length + 1);
+                return (this.users.length + 1);
             },
 
             addUser: function (user) {
                 user.id = this.randNumber();
-                this.people.push(user);
+                this.users.push(user);
                 this.user = {name: ''};
                 this.toHome();
             },

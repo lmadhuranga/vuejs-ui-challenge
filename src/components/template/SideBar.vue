@@ -24,7 +24,7 @@
                         <v-icon>school</v-icon>
                     </v-list-tile-action>
                 </v-list-tile>
-                <people-listing :people="people"></people-listing>
+                <users-list :users="users"></users-list>
             </v-list-group>
 
             <v-list-group :value="false" v-bind:key="0">
@@ -57,11 +57,12 @@
 </template>
 
 <script>
-    import PeopleListing from "../../person/PeopleListing.vue";
+
+    import UsersList from "../user/UsersList.vue";
 
     export default {
+        components: {UsersList},
         name: 'SideMenu',
-        components: {PeopleListing},
-        props: ['people'],
+        props: ['users'],
     }
 </script>

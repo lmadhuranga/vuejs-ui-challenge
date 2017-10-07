@@ -18,18 +18,18 @@
 </template>
 <script>
 
-    import NavBar from "./template/NavBar.vue";
+    import NavBar from "../template/NavBar.vue";
 
     export default {
         components: {
             NavBar,
         },
-        name: 'userDetail',
-        props: ['people'],
+        name: 'userView',
+        props: ['users'],
         data: function () {
             var route = this.$route;
             return {
-                user: this.people.filter(function (user) {
+                user: this.users.filter(function (user) {
                     return user.id == route.params.id;
                 })[0]
             };

@@ -1,11 +1,11 @@
-<template id="person">
+<template id="user">
    <span>
        <v-list-tile-content>
             <v-list-tile-title>
                 <router-link :to="{
-                    name: 'person',
-                    params: { id: person.id }}">
-                    {{ person.name }}
+                    name: 'userView',
+                    params: { id: user.id }}">
+                    {{ user.name }}
                 </router-link>
             </v-list-tile-title>
        </v-list-tile-content>
@@ -13,7 +13,7 @@
 </template>
 <script>
     export default {
-        name: 'person',
-        props: ['person']
+        name: 'user',
+        props: ['user']
     }
 </script>
