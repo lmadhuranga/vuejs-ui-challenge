@@ -21,7 +21,7 @@
                         </v-list-tile-title>
                     </v-list-tile-content>
                     <v-list-tile-action>
-                        <v-icon>school</v-icon>
+                        <v-icon>add</v-icon>
                     </v-list-tile-action>
                 </v-list-tile>
                 <users-list :users="users"></users-list>
