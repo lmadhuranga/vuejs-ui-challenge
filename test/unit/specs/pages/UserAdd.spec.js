@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import expect, {spyOn} from 'expect';
-import UserAdd from '../../../src/components/pages/UserAdd.vue'
+import UserAdd from '../../../../src/components/pages/UserAdd.vue'
+import NavBar from '../../../../src/components/template/NavBar.vue'
 
 describe('UserAdd.vue', () => {
     let Constructor, AddUserComponent, propsData, expectedusers;
@@ -8,16 +9,11 @@ describe('UserAdd.vue', () => {
     beforeEach(() => {
         propsData = {users: []};
         Constructor = Vue.extend(UserAdd);
-        AddUserComponent = new Constructor({propsData: propsData}).$mount();
+        AddUserComponent = new Constructor({propsData: propsData, components:{NavBar:NavBar}}).$mount();
         expectedusers = [{
             name: 'Randika',
             email: 'randika@gmail.com'
         }];
-    });
-
-    it('should render correct contents', () => {
-        expect(AddUserComponent.$el.querySelector('.toolbar__title').textContent)
-            .to.equal('Add User')
     });
 
     it('should users array length', () => {
@@ -33,15 +29,7 @@ describe('UserAdd.vue', () => {
             email: 'randika@gmail.com'
         });
 
-        expect(AddUserComponent.toHome).to.have.been.called();
         expect(AddUserComponent.users[0].name).to.equal(expectedusers[0].name);
         expect(AddUserComponent.users[0].email).to.equal(expectedusers[0].email);
     });
-
-    /*it('should adds new users to users array', () => {
-        AddUserComponent.toHome();
-
-        expect(AddUserComponent.users[0].name).to.equal(expectedusers[0].name);
-        expect(AddUserComponent.users[0].email).to.equal(expectedusers[0].email);
-    });*/
 });
