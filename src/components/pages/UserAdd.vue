@@ -64,17 +64,20 @@
             ],
         }),
         methods: {
-            randNumber: () => {
-                return (this.users.length + 1);
-            },
+            randNumber: function (users) {
+                console.log(`mad_msg__ sdlfsdjl`)
+                return (users.length + 1);
+            }
+            ,
 
-            addUser: (user) => {
-                user.id = this.randNumber();
-                this.users.push(user);
+            addUser: function (newUser) {
+                user.id = this.randNumber(this.users);
+                this.users.push(newUser);
                 this.user = {name: ''};
                 this.toHome();
-            },
-            toHome: () => {
+            }
+            ,
+            toHome: function () {
                 this.$router.push('/');
             },
         }
