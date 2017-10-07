@@ -30,7 +30,6 @@
             let route = this.$route;
             return {
                 user: this.users.filter(function (user) {
-                    console.log(`mad_msg__ user`, user)
                     return user.id == route.params.id;
                 })[0]
             };
