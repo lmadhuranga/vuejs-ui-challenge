@@ -21,6 +21,11 @@
                             :rules="emailRules"
                             required
                     ></v-text-field>
+                    <v-text-field
+                            label="About"
+                            v-model="user.about"
+                            multi-line
+                    ></v-text-field>
 
                     <v-btn
                             class="btn-add-user"

@@ -7,10 +7,10 @@
                 id="scrolling-techniques"
         >
             <v-container>
-                <h3>{{ user.name }}</h3>
-                <h4>Email</h4>
+                <h4>{{ user.name }}</h4>
+                <b>Email</b>
                 <p>{{ user.email }}</p>
-                <h4>About</h4>
+                <b>About</b>
                 <p>{{ user.about }}</p>
             </v-container>
         </main>

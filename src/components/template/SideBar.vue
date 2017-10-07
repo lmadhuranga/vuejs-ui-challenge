@@ -7,7 +7,7 @@
                         <v-icon>person_outline</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
-                        <v-list-tile-title>Users</v-list-tile-title>
+                        <v-list-tile-title>Link Users</v-list-tile-title>
                     </v-list-tile-content>
                     <v-list-tile-action>
                         <v-icon>keyboard_arrow_down</v-icon>
@@ -17,7 +17,7 @@
                 <v-list-tile v-bind:key="10000" @click="">
                     <v-list-tile-content>
                         <v-list-tile-title>
-                            <router-link :to="{ name: 'add'}">Add Person</router-link>
+                            <router-link :to="{ name: 'add'}">Add User</router-link>
                         </v-list-tile-title>
                     </v-list-tile-content>
                     <v-list-tile-action>

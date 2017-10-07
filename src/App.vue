@@ -11,7 +11,7 @@
             return {
                 users: [{
                     id: 1, name: 'madhuranga',
-                    about: 'hi',
+                    about: 'about me',
                     email: 'my@gmail.com'
                 }]
             }
