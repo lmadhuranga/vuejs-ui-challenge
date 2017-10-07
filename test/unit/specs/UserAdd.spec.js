@@ -1,14 +1,15 @@
 import Vue from 'vue'
-import UserAdd from '@/components/UserAdd'
+import expect, {spyOn} from 'expect';
+import UserAdd from '../../../src/components/pages/UserAdd.vue'
 
 describe('UserAdd.vue', () => {
-    let Constructor, AddUserComponent, propsData, expectedPeople;
+    let Constructor, AddUserComponent, propsData, expectedusers;
 
     beforeEach(() => {
-        propsData = {people: []};
+        propsData = {users: []};
         Constructor = Vue.extend(UserAdd);
         AddUserComponent = new Constructor({propsData: propsData}).$mount();
-        expectedPeople = [{
+        expectedusers = [{
             name: 'Randika',
             email: 'randika@gmail.com'
         }];
@@ -19,26 +20,28 @@ describe('UserAdd.vue', () => {
             .to.equal('Add User')
     });
 
-    it('should people array length', () => {
+    it('should users array length', () => {
         expect(AddUserComponent.randNumber()).to.equal(1);
-        AddUserComponent.people.push(expectedPeople[0]);
+        AddUserComponent.users.push(expectedusers[0]);
         expect(AddUserComponent.randNumber()).to.equal(2);
     });
 
-    it('should adds new users to people array', () => {
+    it('should adds new users to users array', () => {
+
         AddUserComponent.addUser({
             name: 'Randika',
             email: 'randika@gmail.com'
         });
 
-        expect(AddUserComponent.people[0].name).to.equal(expectedPeople[0].name);
-        expect(AddUserComponent.people[0].email).to.equal(expectedPeople[0].email);
+        expect(AddUserComponent.toHome).to.have.been.called();
+        expect(AddUserComponent.users[0].name).to.equal(expectedusers[0].name);
+        expect(AddUserComponent.users[0].email).to.equal(expectedusers[0].email);
     });
 
-    /*it('should adds new users to people array', () => {
+    /*it('should adds new users to users array', () => {
         AddUserComponent.toHome();
 
-        expect(AddUserComponent.people[0].name).to.equal(expectedPeople[0].name);
-        expect(AddUserComponent.people[0].email).to.equal(expectedPeople[0].email);
+        expect(AddUserComponent.users[0].name).to.equal(expectedusers[0].name);
+        expect(AddUserComponent.users[0].email).to.equal(expectedusers[0].email);
     });*/
 });
