@@ -26,10 +26,10 @@
         },
         name: 'userView',
         props: ['users'],
-        data ()  {
+        data() {
             let route = this.$route;
             return {
-                user: this.users.filter(function (user) {
+                user: this.users.filter((user) => {
                     return user.id == route.params.id;
                 })[0]
             };
