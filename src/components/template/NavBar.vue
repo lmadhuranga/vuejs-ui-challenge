@@ -21,7 +21,7 @@
         name: 'NavBar',
         props: ['isNew', 'title'],
         methods: {
-            toAdd: function () {
+            toAdd: () => {
                 this.$router.push('/add');
             },
             toHome: function () {

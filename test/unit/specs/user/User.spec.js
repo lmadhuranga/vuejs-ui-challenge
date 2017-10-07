@@ -10,6 +10,7 @@ describe('user/User.vue', () => {
             email: 'randika@gmail.com'
         }];
         const UserComponent = new Constructor({propsData: {user:users[0]}}).$mount();
+
         expect(UserComponent.$el.querySelector('.list__tile__title').textContent)
             .to.equal('Randika - randika@gmail.com\n             ')
     })

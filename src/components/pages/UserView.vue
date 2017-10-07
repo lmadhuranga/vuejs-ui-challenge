@@ -26,7 +26,7 @@
         },
         name: 'userView',
         props: ['users'],
-        data: function () {
+        data: () => {
             var route = this.$route;
             return {
                 user: this.users.filter(function (user) {

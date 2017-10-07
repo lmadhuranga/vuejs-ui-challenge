@@ -64,17 +64,17 @@
             ],
         }),
         methods: {
-            randNumber: function () {
+            randNumber: () => {
                 return (this.users.length + 1);
             },
 
-            addUser: function (user) {
+            addUser: (user) => {
                 user.id = this.randNumber();
                 this.users.push(user);
                 this.user = {name: ''};
                 this.toHome();
             },
-            toHome: function () {
+            toHome: () => {
                 this.$router.push('/');
             },
         }
