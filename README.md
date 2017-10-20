@@ -1,4 +1,4 @@
-# projectinit2
+# vuejs-ui-challenge
 
 > A Vue.js project
 
