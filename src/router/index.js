@@ -7,7 +7,7 @@ import ProjectsList from '@/components/pages/setup/ProjectsList'
 import SelectedShift from '@/components/pages/setup/SelectedShift'
 import FloorManagersList from '@/components/pages/setup/FloorManagersList'
 import UserAdd from '@/components/pages/setup/UserAdd'
-import UsersList from '@/components/pages/setup/UsersList'
+import ShiftAdd from '@/components/pages/setup/ShiftAdd'
 
 import Vuetify from 'vuetify'
 
@@ -35,7 +35,7 @@ export default new Router({
           component: ProjectsList
         },
         {
-          path: 'selectedShift',
+          path: 'selectedShift/:id',
           component: SelectedShift
         },
         {
@@ -43,13 +43,14 @@ export default new Router({
           component: FloorManagersList
         },
         {
-          path: 'users',
-          component: UsersList
-        },
-        {
           path: 'userAdd',
           component: UserAdd
         },
+        {
+          path: 'shiftAdd',
+          component: ShiftAdd
+        },
+
 
       ]
     }

@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-list>
-            <v-list-group :value="true" v-bind:key="0">
+            <v-list-group :value="false" v-bind:key="0">
                 <v-list-tile slot="item" @click="">
                     <v-list-tile-action>
                         <v-icon>person_outline</v-icon>
@@ -24,10 +24,10 @@
                         <v-icon>add</v-icon>
                     </v-list-tile-action>
                 </v-list-tile>
-                <users-list :users="users"></users-list>
+                <!--<users-list :users="users"></users-list>-->
             </v-list-group>
 
-            <v-list-group :value="false" v-bind:key="0">
+            <v-list-group :value="false" v-for="project in projects" v-bind:key="project.id"  >
                 <v-list-tile slot="item" @click="">
                     <v-list-tile-action>
                         <v-icon>person_outline</v-icon>
@@ -63,6 +63,6 @@
     export default {
         components: {UsersList},
         name: 'SideMenu',
-        props: ['users'],
+        props: ['projects'],
     }
 </script>

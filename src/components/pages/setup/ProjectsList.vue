@@ -6,7 +6,7 @@
       id="scrolling-techniques"
     >
       <h2>Project List</h2>
-      <side-menu :users="users"></side-menu>
+      <project-list-menu :projects="projects"></project-list-menu>
       <router-link :to="{ path: '/setup/floorManagersList'}">Floor Manager Select</router-link>
       <router-link :to="{ path: '/setup/selectedShift'}">Selected Shift</router-link>
     </main>
@@ -16,13 +16,15 @@
 <script>
   import UserList from "./UsersList.vue";
   import SideMenu from "../../template/SideBar.vue";
+  import ProjectListMenu from "../../template/ProjectListMenu";
 
   export default {
     components: {
+      ProjectListMenu,
       SideMenu,
       UserList,
     },
-    props: ['users']
+    props: ['users', 'projects']
 
   }
 </script>

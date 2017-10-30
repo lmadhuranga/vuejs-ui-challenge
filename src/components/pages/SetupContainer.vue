@@ -8,7 +8,7 @@
     >
       <form action="">
         <h1>SetupContainer</h1>
-        <router-view></router-view>
+        <router-view :users="users" :projects="projects"></router-view>
       </form>
     </main>
   </v-app>

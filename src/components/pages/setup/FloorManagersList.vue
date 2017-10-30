@@ -6,7 +6,7 @@
       id="scrolling-techniques"
     >
       <h2>Floor Managers List</h2>
-      <side-menu :users="users"></side-menu>
+      <floor-managers-list-menu :floorManagers="users"></floor-managers-list-menu>
       <!--<router-link :to="{ path: '/setup/useradd'}">Add User</router-link>-->
     </main>
   </v-app>
@@ -15,9 +15,11 @@
 <script>
   import UserList from "./UsersList.vue";
   import SideMenu from "../../template/SideBar.vue";
+  import FloorManagersListMenu from "../../template/FloorManagersListMenu";
 
   export default {
     components: {
+      FloorManagersListMenu,
       SideMenu,
       UserList,
     },
