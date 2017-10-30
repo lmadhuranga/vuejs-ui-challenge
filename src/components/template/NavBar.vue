@@ -22,7 +22,7 @@
         props: ['isNew', 'title'],
         methods: {
             toAdd: () => {
-                this.$router.push('/add');
+//                this.$router.push('/add');
             },
             toHome: function () {
                 this.$router.push('/');

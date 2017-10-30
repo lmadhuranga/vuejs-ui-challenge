@@ -1,6 +1,6 @@
 <template>
   <v-app toolbar--fixed toolbar style="overflow: hidden">
-    <nav-bar title="Home Page" :isNew="false"></nav-bar>
+    <!--<nav-bar title="Home Page" :isNew="false"></nav-bar>-->
     <main
       style="max-height: 600px;"
       class="scroll-y"
@@ -8,7 +8,6 @@
     >
       <h1>Home page</h1>
 
-      <router-link to="usersList">Users List</router-link>
       <v-form v-model="valid" ref="form" lazy-validation>
         <v-text-field
           label="Name"
@@ -36,6 +35,7 @@
         >
           Add User
         </v-btn>
+        <router-link :to="{ path: 'setup/projectsList'}">Select Floor Manager</router-link>
       </v-form>
     </main>
   </v-app>

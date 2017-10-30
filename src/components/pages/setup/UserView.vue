@@ -18,11 +18,10 @@
 </template>
 <script>
 
-    import NavBar from "../template/NavBar.vue";
+    import NavBar from "../../template/NavBar.vue";
 
     export default {
         components: {
-            NavBar,
         },
         name: 'userView',
         props: ['users'],

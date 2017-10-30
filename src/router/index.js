@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/pages/HomePage'
-import UserAdd from '@/components/pages/UserAdd'
-import UserView from '@/components/pages/UserView'
-import UsersList from '@/components/pages/UsersList'
 import SetupContainer from '@/components/pages/SetupContainer'
+
+import ProjectsList from '@/components/pages/setup/ProjectsList'
+import SelectedShift from '@/components/pages/setup/SelectedShift'
+import FloorManagersList from '@/components/pages/setup/FloorManagersList'
+import UserAdd from '@/components/pages/setup/UserAdd'
+import UsersList from '@/components/pages/setup/UsersList'
+
 import Vuetify from 'vuetify'
 
 Vue.use(Vuetify);
@@ -22,31 +26,32 @@ export default new Router({
       component: Home
     },
     {
-      path: '/userslist',
-      name: 'usersList',
-      component: UsersList
-    },
-    {
       path: '/setup',
       name: 'setup',
       component: SetupContainer,
       children: [
         {
-          // UserProfile will be rendered inside User's <router-view>
-          // when /user/:id/profile is matched
-          path: 'add',
+          path: 'projectsList',
+          component: ProjectsList
+        },
+        {
+          path: 'selectedShift',
+          component: SelectedShift
+        },
+        {
+          path: 'floorManagersList',
+          component: FloorManagersList
+        },
+        {
+          path: 'users',
+          component: UsersList
+        },
+        {
+          path: 'userAdd',
           component: UserAdd
-        }]
-    },
-    {
-      path: '/add',
-      name: 'add',
-      component: UserAdd
-    },
-    {
-      path: '/:id',
-      name: 'userView',
-      component: UserView
+        },
+
+      ]
     }
   ]
 })
