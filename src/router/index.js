@@ -47,7 +47,7 @@ export default new Router({
           component: UserAdd
         },
         {
-          path: 'shiftAdd',
+          path: 'shiftAdd/:userId',
           component: ShiftAdd
         },
 

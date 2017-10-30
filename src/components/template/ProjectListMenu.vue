@@ -28,7 +28,7 @@
                 </v-list-tile>
 
                 <!--List the project's shift list-->
-                <v-list-tile v-for="shift in project.shifts" v-bind:key="shift.id"  @click="">
+                <v-list-tile v-for="shift in project.shifts" v-bind:key="shift.id"  @click="updateSelectedProject(project.id)">
                     <v-list-tile-content>
                         <v-list-tile-title>
                           <router-link :to="{ path: `/setup/selectedShift/${shift.id}`}">{{shift.name}}</router-link>
@@ -51,6 +51,12 @@
     export default {
         components: {UsersList},
         name: 'ProjectListMenu',
-        props: ['projects'],
+        props: ['projects', 'selectedproject'],
+        methods: {
+
+          updateSelectedProject (projectId)  {
+             this.selectedproject.id= projectId;
+          }
+        }
     }
 </script>

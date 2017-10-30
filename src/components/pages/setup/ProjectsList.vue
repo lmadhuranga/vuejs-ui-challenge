@@ -6,7 +6,7 @@
       id="scrolling-techniques"
     >
       <h2>Project List</h2>
-      <project-list-menu :projects="projects"></project-list-menu>
+      <project-list-menu :projects="projects" :selectedproject="selectedproject" ></project-list-menu>
       <router-link :to="{ path: '/setup/floorManagersList'}">Floor Manager Select</router-link>
       <router-link :to="{ path: '/setup/selectedShift'}">Selected Shift</router-link>
     </main>
@@ -24,7 +24,8 @@
       SideMenu,
       UserList,
     },
-    props: ['users', 'projects']
+    name: 'ProjectList',
+    props: ['users', 'projects', 'selectedproject']
 
   }
 </script>

@@ -70,7 +70,7 @@
         this.toHome();
       },
       toHome () {
-        this.$router.push('/');
+        this.$router.push('/setup/floorManagersList');
       },
     }
   }

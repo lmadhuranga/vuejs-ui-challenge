@@ -8,7 +8,7 @@
     >
       <form action="">
         <h1>SetupContainer</h1>
-        <router-view :users="users" :projects="projects"></router-view>
+        <router-view :users="users" :projects="projects" :selectedproject="selectedproject" ></router-view>
       </form>
     </main>
   </v-app>
@@ -25,7 +25,7 @@
       SideMenu,
       UserList,
     },
-    props: ['users', 'projects']
+    props: ['users', 'projects', 'selectedproject']
 
   }
 </script>

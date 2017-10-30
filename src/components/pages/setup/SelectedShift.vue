@@ -8,6 +8,7 @@
 
   export default {
     components: {},
+    name:'SelectedShift',
     props: ['projects']
 
   }

@@ -20,6 +20,7 @@
       SideMenu,
       UserList,
     },
+    name:'UsersList',
     props: ['users']
 
   }

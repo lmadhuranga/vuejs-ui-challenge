@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view :users="users" :projects="projects"></router-view>
+    <router-view :users="users" :projects="projects" :selectedproject="selectedproject"></router-view>
   </div>
 </template>
 
@@ -54,7 +54,8 @@
               }
             ]
           }
-        ]
+        ],
+        selectedproject:{name:'', id:''}
       }
 
     }
