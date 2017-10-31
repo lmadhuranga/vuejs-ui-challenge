@@ -25,7 +25,7 @@
         @click="addShift(shift)"
         :disabled="!valid"
       >
-        Add User
+        Add Shift
       </v-btn>
     </v-form>
   </v-container>
