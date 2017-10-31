@@ -38,21 +38,15 @@ describe('SelectedShift.vue', () => {
   });
 
   it('should be able load shift', () => {
-    expect(cmp.vm.projects[projectId].shifts[0].name).toEqual(shift.name);
-    expect(cmp.vm.projects[projectId].shifts[0].name).toEqual(shift.name);
-
+    expect(cmp.vm.projects[projectId].shifts[0]).toEqual(shift);
   });
 
   it('should be able load project', () => {
-    expect(cmp.vm.projects[projectId].name).toEqual(project.name);
-    expect(cmp.vm.projects[projectId].id).toEqual(project.id);
-
+    expect(cmp.vm.projects[projectId]).toEqual(project);
   });
 
   it('should be able load floorManager', () => {
-    expect(cmp.vm.floorManager.name).toEqual(user.name);
-    expect(cmp.vm.floorManager.name).toEqual(user.name);
-
+    expect(cmp.vm.floorManager).toEqual(user);
   });
 
 

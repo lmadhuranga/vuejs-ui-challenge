@@ -1,15 +1,15 @@
 import Vue from 'Vue';
-import FloorManagersListMenu from '../../src/components/template/FloorManagersListMenu.vue'
-import router from '../../src/router'
-import data from '../../src/config/data'
+import FloorManagersList from '../../../src/components/pages/setup/FloorManagersList.vue'
+import router from '../../../src/router'
+import data from '../../../src/config/data'
 import {shallow, mount} from "vue-test-utils"
 import VueRouter from 'vue-router';
 
-describe('FloorMangersListMenu.vue', () => {
+describe('FloorManagersList.vue', () => {
   Vue.use(VueRouter);
-  let cmp, floorManager;
+  let cmp, users;
 
-  const createCmp = propsData => shallow(FloorManagersListMenu, {
+  const createCmp = propsData => shallow(FloorManagersList, {
     propsData,
     el: document.createElement('div'),
     router: router,
@@ -17,15 +17,14 @@ describe('FloorMangersListMenu.vue', () => {
   });
 
   beforeEach(() => {
-    floorManager = data.users[0];
-
+    users = data.users;
     cmp = createCmp({
-      floorManagers: [floorManager]
+      users: users
     });
   });
 
   it('should be able load floorManagers', () => {
-    expect(cmp.vm.floorManagers).toEqual([floorManager]);
+    expect(cmp.vm.users).toEqual(users);
   });
 
   it('has the expected html structure', () => {

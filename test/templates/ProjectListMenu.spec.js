@@ -36,11 +36,8 @@ describe('ProjectListMenu.vue', () => {
 
   it('has the expected html structure', () => {
     expect(cmp.element).toMatchSnapshot()
-  })
+  });
 
-  // it('should be project list show in the list', () => {
-  //   expect(cmp.vm.content).to.contain
-  // });
   it('should be button click then trigger selectedShift function', () => {
     // TODO cmp.vm.selectedShift = jest.fn();
   });

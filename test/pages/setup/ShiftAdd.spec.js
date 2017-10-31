@@ -7,8 +7,10 @@ import VueRouter from 'vue-router'
 
 
 describe('ShiftAdd.vue', () => {
+
   Vue.use(VueRouter);
   let cmp, user, shift, projectId, userId;
+
   const createCmp = propsData => shallow(ShiftAdd, {
     propsData,
     el: document.createElement('div'),
@@ -26,7 +28,6 @@ describe('ShiftAdd.vue', () => {
       projects:{1:data.projects[projectId]}
     });
     shift = data.projects[projectId].shifts[0];
-
   });
 
   it('should adds new shift to shifts array', () => {
