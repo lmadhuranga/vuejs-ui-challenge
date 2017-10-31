@@ -11,18 +11,20 @@
       return {
         users: [
           {
-            id: 1, name: 'Madhuranga Sendheera',
+            id: 1,
+            name: 'Madhuranga Sendheera',
             about: 'about me',
             email: 'my@gmail.com'
           },
           {
-            id: 1, name: 'Randika Senadheera',
+            id: 2,
+            name: 'Randika Senadheera',
             about: 'about me',
             email: 'my@gmail.com'
           },
         ],
-        projects: [
-          {
+        projects: {
+          1: {
             id: 1,
             name: 'Project 1',
             shifts: [
@@ -36,7 +38,7 @@
               }
             ]
           },
-          {
+          2: {
             id: 2,
             name: 'Project 2',
             shifts: [
@@ -47,15 +49,11 @@
               {
                 id: 2,
                 name: 'shift2'
-              },
-              {
-                id: 3,
-                name: 'shift2'
               }
             ]
           }
-        ],
-        selectedproject:{name:'', id:''}
+        },
+        selectedproject: {name: '', id: ''}
       }
 
     }

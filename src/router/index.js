@@ -35,7 +35,7 @@ export default new Router({
           component: ProjectsList
         },
         {
-          path: 'selectedShift/:id',
+          path: 'selectedShift/:projectId/:id',
           component: SelectedShift
         },
         {

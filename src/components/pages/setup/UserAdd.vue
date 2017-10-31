@@ -8,22 +8,39 @@
       <v-container>
         <v-form v-model="valid" ref="form" lazy-validation>
           <v-text-field
-            label="Name"
+            label="Full Name"
             v-model="user.name"
             :rules="nameRules"
             :counter="10"
             required
           ></v-text-field>
+
           <v-text-field
             label="E-mail"
             v-model="user.email"
             :rules="emailRules"
             required
           ></v-text-field>
+
           <v-text-field
-            label="About"
-            v-model="user.about"
+            label="Address"
+            v-model="user.address"
             multi-line
+          ></v-text-field>
+
+          <v-text-field
+            label="Post Code"
+            v-model="user.postCode"
+          ></v-text-field>
+
+          <v-text-field
+            label="BTW Number"
+            v-model="user.btwNumber"
+          ></v-text-field>
+
+          <v-text-field
+            label="Kvk Number"
+            v-model="user.kvkNumber"
           ></v-text-field>
 
           <v-btn
@@ -67,10 +84,10 @@
         newUser.id = this.randNumber();
         this.users.push(newUser);
         this.user = {name: ''};
-        this.toHome();
+        this.toHome(newUser.id);
       },
-      toHome () {
-        this.$router.push('/setup/floorManagersList');
+      toHome (userId) {
+        this.$router.push(`/setup/shiftAdd/${userId}`);
       },
     }
   }
