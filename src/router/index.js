@@ -31,22 +31,27 @@ export default new Router({
       component: SetupContainer,
       children: [
         {
+          name:'projectsList',
           path: 'projectsList',
           component: ProjectsList
         },
         {
+          name:'selectedShift',
           path: 'selectedShift/:projectId/:shiftId',
           component: SelectedShift
         },
         {
+          name:'floorManagersList',
           path: 'floorManagersList',
           component: FloorManagersList
         },
         {
+          name:'userAdd',
           path: 'userAdd',
           component: UserAdd
         },
         {
+          name:'shiftAdd',
           path: 'shiftAdd/:userId',
           component: ShiftAdd
         },

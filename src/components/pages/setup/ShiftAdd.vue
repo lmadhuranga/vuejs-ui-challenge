@@ -58,7 +58,7 @@
         newShift.id = uuid.v4();
         newShift.userId = this.$route.params.userId;
         this.projects[this.selectedproject.id].shifts.push(newShift);
-        this.toHome(this.selectedproject.id, newShift.id);
+        //TODO this.toHome(this.selectedproject.id, newShift.id);
       },
       toHome (projectId, newShiftId) {
         this.$router.push(`/setup/selectedShift/${projectId}/${newShiftId}`);
@@ -66,5 +66,3 @@
     }
   }
 </script>
-
-

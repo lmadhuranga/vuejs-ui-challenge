@@ -75,9 +75,9 @@
         newUser.id = uuid.v4();
         this.users.push(newUser);
         this.user = {name: ''};
-        this.toHome(newUser.id);
+//        TODO this.goToNext(newUser.id);
       },
-      toHome (userId) {
+      goToNext (userId) {
         this.$router.push(`/setup/shiftAdd/${userId}`);
       },
     }
