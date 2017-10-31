@@ -1,7 +1,7 @@
 import Vue from 'Vue';
-import SelectedShift from '../../../../src/components/template/ProjectListMenu.vue'
-import router from '../../../../src/router'
-import data from '../../../../src/config/data'
+import SelectedShift from '../../src/components/template/ProjectListMenu.vue'
+import router from '../../src/router'
+import data from '../../src/config/data'
 import {shallow, mount} from "vue-test-utils"
 import VueRouter from 'vue-router';
 
@@ -30,8 +30,8 @@ describe('ProjectListMenu.vue', () => {
   });
 
   it('should be able load projects and selectedProject', () => {
-    expect(cmp.vm.selectedproject.id).to.equal(projectId);
-    expect(cmp.vm.projects[1]).to.equal(project);
+    expect(cmp.vm.selectedproject.id).toEqual(projectId);
+    expect(cmp.vm.projects[1]).toEqual(project);
   });
 
   it('has the expected html structure', () => {

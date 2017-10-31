@@ -1,7 +1,7 @@
 import Vue from 'Vue';
-import SelectedShift from '../../../../../src/components/pages/setup/SelectedShift.vue'
-import router from '../../../../../src/router'
-import data from '../../../../../src/config/data'
+import SelectedShift from '../../../src/components/pages/setup/SelectedShift.vue'
+import router from '../../../src/router'
+import data from '../../../src/config/data'
 import {shallow, mount} from "vue-test-utils"
 import VueRouter from 'vue-router'
 import lodash from 'lodash';
@@ -38,20 +38,20 @@ describe('SelectedShift.vue', () => {
   });
 
   it('should be able load shift', () => {
-    expect(cmp.vm.projects[projectId].shifts[0].name).to.equal(shift.name);
-    expect(cmp.vm.projects[projectId].shifts[0].name).to.equal(shift.name);
+    expect(cmp.vm.projects[projectId].shifts[0].name).toEqual(shift.name);
+    expect(cmp.vm.projects[projectId].shifts[0].name).toEqual(shift.name);
 
   });
 
   it('should be able load project', () => {
-    expect(cmp.vm.projects[projectId].name).to.equal(project.name);
-    expect(cmp.vm.projects[projectId].id).to.equal(project.id);
+    expect(cmp.vm.projects[projectId].name).toEqual(project.name);
+    expect(cmp.vm.projects[projectId].id).toEqual(project.id);
 
   });
 
   it('should be able load floorManager', () => {
-    expect(cmp.vm.floorManager.name).to.equal(user.name);
-    expect(cmp.vm.floorManager.name).to.equal(user.name);
+    expect(cmp.vm.floorManager.name).toEqual(user.name);
+    expect(cmp.vm.floorManager.name).toEqual(user.name);
 
   });
 
