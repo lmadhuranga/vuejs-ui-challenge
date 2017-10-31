@@ -43,13 +43,11 @@
 
 <script>
   import UserList from "../user/UsersList.vue";
-  import SideMenu from "../template/SideBar.vue";
   import NavBar from "../template/NavBar.vue";
 
   export default {
     components: {
       NavBar,
-      SideMenu,
       UserList,
     },
     props: ['users'],
@@ -66,8 +64,6 @@
         (v) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
       ],
     }),
-
-
 
   }
 </script>

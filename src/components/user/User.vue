@@ -13,8 +13,8 @@
    </span>
 </template>
 <script>
-    export default {
-        name: 'user',
-        props: ['user']
-    }
+  export default {
+    name: 'user',
+    props: ['user']
+  }
 </script>
