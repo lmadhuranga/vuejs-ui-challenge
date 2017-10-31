@@ -50,7 +50,6 @@ describe('SelectedShift.vue', () => {
   });
 
   it('should be able load floorManager', () => {
-    console.log('mad_msg__cmp.vm.floorManager', cmp.vm.floorManager)
     expect(cmp.vm.floorManager.name).to.equal(user.name);
     expect(cmp.vm.floorManager.name).to.equal(user.name);
 
