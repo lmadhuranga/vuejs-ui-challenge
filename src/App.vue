@@ -13,14 +13,18 @@
           {
             id: 1,
             name: 'Madhuranga Sendheera',
-            about: 'about me',
-            email: 'my@gmail.com'
+            address: 'Colombo, Sri Lanka',
+            postCode: '12344',
+            btwNumber: '12345',
+            kvkNumber: '12345'
           },
           {
             id: 2,
             name: 'Randika Senadheera',
-            about: 'about me',
-            email: 'my@gmail.com'
+            address: 'Colombo, Sri Lanka',
+            postCode: '12344',
+            btwNumber: '12345',
+            kvkNumber: '12345'
           },
         ],
         projects: {
@@ -30,25 +34,17 @@
             shifts: [
               {
                 id: 1,
-                name: 'shift1'
+                name: 'shift1',
+                iban: 'IbanDetails',
+                description: 'description',
+                userId: 1
               },
               {
                 id: 2,
-                name: 'shift2'
-              }
-            ]
-          },
-          2: {
-            id: 2,
-            name: 'Project 2',
-            shifts: [
-              {
-                id: 1,
-                name: 'shift1'
-              },
-              {
-                id: 2,
-                name: 'shift2'
+                name: 'shift2',
+                iban: 'IbanDetails',
+                description: 'description',
+                userId: 2
               }
             ]
           }

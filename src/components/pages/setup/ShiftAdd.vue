@@ -1,6 +1,6 @@
 <template id="userAdd">
   <v-container>
-    <h2>Shift Add {{this.$route.params.userId}}</h2>
+    <h2>Shift Add</h2>
     <v-form v-model="valid" ref="form" lazy-validation>
       <v-text-field
         label="Shift Name"
@@ -34,6 +34,7 @@
 
 <script>
 
+  import uuid from 'uuid'
 
   export default {
     components: {},
@@ -49,17 +50,14 @@
 
     }),
     methods: {
-      randNumber  () {
-        return (this.projects[this.selectedproject.id].shifts.length + 1);
-      },
       addShift (newShift) {
         if (!this.selectedproject.id) {
           this.$router.push('/setup/projectsList');
         }
 
-        newShift.id = this.randNumber();
-        this.projects[this.selectedproject.id].shifts[newShift.id] = newShift;
-        this.user = {name: ''};
+        newShift.id = uuid.v4();
+        newShift.userId = this.$route.params.userId;
+        this.projects[this.selectedproject.id].shifts.push(newShift);
         this.toHome(this.selectedproject.id, newShift.id);
       },
       toHome (projectId, newShiftId) {

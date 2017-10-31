@@ -58,7 +58,7 @@
 
 
 <script>
-
+  import uuid from 'uuid';
 
   export default {
     components: {},
@@ -77,11 +77,9 @@
       ],
     }),
     methods: {
-      randNumber  () {
-        return (this.users.length + 1);
-      },
+
       addUser (newUser) {
-        newUser.id = this.randNumber();
+        newUser.id = uuid.v4();
         this.users.push(newUser);
         this.user = {name: ''};
         this.toHome(newUser.id);
