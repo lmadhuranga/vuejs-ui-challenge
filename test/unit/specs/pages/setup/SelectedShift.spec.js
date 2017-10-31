@@ -1,24 +1,17 @@
 import Vue from 'Vue';
-import ShiftAdd from '../../../../../src/components/pages/setup/SelectedShift.vue'
+import SelectedShift from '../../../../../src/components/pages/setup/SelectedShift.vue'
+import router from '../../../../../src/router'
 import data from '../../../../../src/config/data'
 import {shallow, mount} from "vue-test-utils"
 import VueRouter from 'vue-router'
+import lodash from 'lodash';
 
 
-describe('ShiftAdd.vue', () => {
-  /*Vue.use(VueRouter);
-  let cmp, user, shift, projectId, userId;
-  const router = new VueRouter({
-    routes: [
-      {
-        path: '/setup/shiftAdd/:userId',
-        name: 'shiftAdd',
-        component: ShiftAdd,
-        params: 1
-      },
-    ],
-  });
-  const createCmp = propsData => shallow(ShiftAdd, {
+describe('SelectedShift.vue', () => {
+  Vue.use(VueRouter);
+  let cmp, user, shift, projectId, userId, shiftId, shiftIndex, project;
+
+  const createCmp = propsData => shallow(SelectedShift, {
     propsData,
     el: document.createElement('div'),
     router: router,
@@ -27,26 +20,41 @@ describe('ShiftAdd.vue', () => {
 
   beforeEach(() => {
     projectId = 1;
-    userId = 100;
+    shiftIndex = 1;
+    shift = data.projects[projectId].shifts[0];
+    shiftId = shift.id;
+    user = data.users[0];
+    project = data.projects[projectId];
 
     cmp = createCmp({
-      users: [],
-      selectedproject: {id: projectId},
-      projects:{1:data.projects[projectId]}
+      users: data.users,
+      projects: {1: project}
     });
-    shift = data.projects[projectId].shifts[0];
+
+    router.push({
+      name: 'selectedShift',
+      params: {projectId: projectId, shiftId: shiftId, userId: user.id}
+    });
+  });
+
+  it('should be able load shift', () => {
+    expect(cmp.vm.projects[projectId].shifts[0].name).to.equal(shift.name);
+    expect(cmp.vm.projects[projectId].shifts[0].name).to.equal(shift.name);
 
   });
 
-  it('should adds new shift to shifts array', () => {
-    router.push({name: 'shiftAdd', params: {userId: userId}})
-    // //TODO cmp.vm.goToNext = jest.fn();
-    cmp.vm.addShift(shift);
-    //
-    //TODO expect(cmp.vm.goToNext).toBeCalled()
-    //
-    expect(cmp.vm.projects[projectId].shifts[0].name).to.equal(shift.name);
-    expect(cmp.vm.projects[projectId].shifts[0].userId).to.equal(userId);
+  it('should be able load project', () => {
+    expect(cmp.vm.projects[projectId].name).to.equal(project.name);
+    expect(cmp.vm.projects[projectId].id).to.equal(project.id);
 
-  });*/
+  });
+
+  it('should be able load floorManager', () => {
+    console.log('mad_msg__cmp.vm.floorManager', cmp.vm.floorManager)
+    expect(cmp.vm.floorManager.name).to.equal(user.name);
+    expect(cmp.vm.floorManager.name).to.equal(user.name);
+
+  });
+
+
 });
