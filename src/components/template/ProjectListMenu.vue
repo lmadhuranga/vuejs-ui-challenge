@@ -46,10 +46,9 @@
 
 <script>
 
-  import UsersList from "../user/UsersList.vue";
 
   export default {
-    components: {UsersList},
+    components: {},
     name: 'ProjectListMenu',
     props: ['projects', 'selectedproject'],
     methods: {

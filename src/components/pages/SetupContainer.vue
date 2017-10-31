@@ -13,13 +13,11 @@
 </template>
 
 <script>
-  import UserList from "../user/UsersList.vue";
   import NavBar from "../template/NavBar.vue";
 
   export default {
     components: {
       NavBar,
-      UserList,
     },
     props: ['users', 'projects', 'selectedproject']
 

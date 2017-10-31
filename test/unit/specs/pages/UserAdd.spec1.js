@@ -16,12 +16,6 @@ describe('UserAdd.vue', () => {
         }];
     });
 
-    it('should users array length', () => {
-        expect(AddUserComponent.randNumber()).to.equal(1);
-        AddUserComponent.users.push(expectedusers[0]);
-        expect(AddUserComponent.randNumber()).to.equal(2);
-    });
-
     it('should adds new users to users array', () => {
 
         AddUserComponent.addUser({

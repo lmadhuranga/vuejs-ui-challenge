@@ -6,7 +6,7 @@
       class="scroll-y"
       id="scrolling-techniques"
     >
-      <h1>Home page</h1>
+
 
       <v-form v-model="valid" ref="form" lazy-validation>
         <v-text-field
@@ -42,13 +42,11 @@
 </template>
 
 <script>
-  import UserList from "../user/UsersList.vue";
   import NavBar from "../template/NavBar.vue";
 
   export default {
     components: {
-      NavBar,
-      UserList,
+      NavBar
     },
     props: ['users'],
     data: () => ({
