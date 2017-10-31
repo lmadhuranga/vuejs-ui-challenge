@@ -9,7 +9,7 @@ describe('FloorManagersList.vue', () => {
   Vue.use(VueRouter);
   let cmp, users;
 
-  const createCmp = propsData => mount(FloorManagersList, {
+  const createCmp = propsData => shallow(FloorManagersList, {
     propsData,
     el: document.createElement('div'),
     router: router,
