@@ -33,10 +33,16 @@
     props:['currentRoute'],
     name: 'TabHeaderCollection',
     methods:{
+      /**
+       * Get full nested url
+       */
       getSetupUrl(url){
         return `/setup/${url}`;
       }
     },
+    /**
+     * Values set to correct header
+     */
     computed: {
       selectedShift(){
         return this.currentRoute=='selectedShift';

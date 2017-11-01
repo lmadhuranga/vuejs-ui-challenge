@@ -68,7 +68,7 @@
 </style>
 <template>
   <div id="selectedShift" class="panelMedium active">
-    <a class="panelClose">X</a>
+    <go-to-home></go-to-home>
     <div class="accordion">
       <navigator msg="Go To Home" path="/setup"></navigator>
       <div class="accordionBody active">
@@ -92,20 +92,28 @@
   import _ from 'lodash'
   import TabHeaderCollection from "../../template/TabHeaderCollection";
   import Navigator from "../../template/Navigator";
+  import GoToHome from "../../template/GotoHome";
   export default {
     components: {
+      GoToHome,
       Navigator,
-      TabHeaderCollection},
+      TabHeaderCollection
+    },
     name: 'SelectedShift',
     props: ['projects', 'users'],
-    methods: {},
     data(){
-        return {
-          currentRoute:'selectedShift'
-        }
+      return {
+        currentRoute: 'selectedShift'
+      }
     },
     computed: {
+      /**
+       * Get the shift details from selected project's details
+       */
       shift  () {
+        if (!this.$route.params.projectId && !this.$route.params.shiftId) {
+          this.$router.push('/setup/projectsList');
+        }
         let projectId = this.$route.params.projectId;
         let shiftId = this.$route.params.shiftId;
         let shift = _.filter(this.projects[projectId].shifts, (shift) => {
@@ -113,14 +121,24 @@
         });
         return shift[0];
       },
+      /**
+       * Get the project from projects main array
+       * @returns {*}
+       */
       project (){
         let projectId = this.$route.params.projectId;
         return this.projects[projectId]
       },
+      /**
+       * Find the floormanager from the user id
+       */
       floorManager(){
         let floorManager = _.filter(this.users, (user) => {
           return user.id == this.shift.userId;
         });
+        if(floorManager.length==0){
+          this.$router.push('/setup/projectsList');
+        }
         return floorManager[0];
       }
 

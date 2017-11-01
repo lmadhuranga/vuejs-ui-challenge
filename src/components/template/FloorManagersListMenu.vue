@@ -22,6 +22,10 @@
     name: 'FloorManagersListMenu',
     props: ['floorManagers'],
     computed: {
+      /**
+       * Filter the floor manger from main floor manager array
+       * @returns {*[]|Array.<*>}
+       */
       filteredFloorManagers() {
         return this.floorManagers.filter(floorManager => {
           return floorManager.name.indexOf(this.search.toLowerCase()) > -1

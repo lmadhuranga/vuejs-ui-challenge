@@ -9,8 +9,5 @@
     components: {},
     props:['msg', 'path'],
     name: 'Navigator',
-    mounted(){
-        console.log('mad_msg__ this.msg', this.msg)
-    }
   }
 </script>

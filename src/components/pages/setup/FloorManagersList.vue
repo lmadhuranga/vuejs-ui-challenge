@@ -68,7 +68,7 @@
 </style>
 <template>
   <div id="floorManagersList" class="panelMedium active">
-    <a class="panelClose">X</a>
+    <go-to-home></go-to-home>
     <div class="accordion">
       <navigator msg="Go To Home" path="/setup/"></navigator>
       <div class="accordionBody active">
@@ -92,9 +92,11 @@
   import FloorManagersListMenu from "../../template/FloorManagersListMenu";
   import TabHeaderCollection from "../../template/TabHeaderCollection";
   import Navigator from "../../template/Navigator";
+  import GoToHome from "../../template/GotoHome";
 
   export default {
     components: {
+      GoToHome,
       Navigator,
       TabHeaderCollection,
       FloorManagersListMenu,

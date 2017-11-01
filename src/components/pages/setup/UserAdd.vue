@@ -37,7 +37,7 @@
 </style>
 <template>
   <div id="userAdd" class="panelMedium active">
-    <a class="panelClose">X</a>
+    <go-to-home></go-to-home>
     <div class="accordion">
       <navigator msg="Go To Floor Managers" path="/setup/floorManagersList"></navigator>
       <div class="accordionBody active">
@@ -105,9 +105,11 @@
   import uuid from 'uuid';
   import TabHeaderCollection from "../../template/TabHeaderCollection";
   import Navigator from "../../template/Navigator";
+  import GoToHome from "../../template/GotoHome";
 
   export default {
     components: {
+      GoToHome,
       Navigator,
       TabHeaderCollection},
     props: ['users'],
@@ -126,13 +128,20 @@
       ],
     }),
     methods: {
-
+      /**
+       * Add user to main users array
+       * @param newUser
+       */
       addUser (newUser) {
         newUser.id = uuid.v4();
         this.users.push(newUser);
         this.user = {name: ''};
         this.goToNext(newUser.id);
       },
+      /**
+       * Navigate to next page
+       * @param userId
+       */
       goToNext (userId) {
         this.$router.push(`/setup/shiftAdd/${userId}`);
       },

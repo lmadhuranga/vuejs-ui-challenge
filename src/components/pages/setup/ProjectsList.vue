@@ -46,8 +46,7 @@
   <div id="projectList">
     <!-- s panel small -->
     <div class="wall panelSmall active" style="display: block">
-
-      <a class="panelClose">X</a>
+      <go-to-home></go-to-home>
       <h2>Project List</h2>
 
       <div class="accordionWrap">
@@ -66,16 +65,15 @@
 
 <script>
   import ProjectListMenu from "../../template/ProjectListMenu";
+  import GoToHome from "../../template/GotoHome";
 
   export default {
     components: {
+      GoToHome,
       ProjectListMenu
     },
     name: 'ProjectList',
-    props: ['users', 'projects', 'selectedproject'],
-    mounted(){
-//        console.log('mad_msg__projects',this.projects)
-    }
+    props: ['users', 'projects', 'selectedproject']
 
   }
 </script>

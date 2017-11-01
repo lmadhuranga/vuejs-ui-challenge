@@ -66,7 +66,11 @@
     name: 'ProjectListMenu',
     props: ['projects', 'selectedproject'],
     methods: {
-
+      /**
+       * Select the shift and navigate to selected shift
+       * @param projectId
+       * @param shiftId
+       */
       selectedShift (projectId, shiftId = false)  {
         // udpate the project
         this.selectedproject.id = projectId;
@@ -78,9 +82,6 @@
           // redirect to shift
           this.$router.push(`/setup/floorManagersList`);
         }
-      },
-      mounted(){
-        console.log('mad_msg__projects',this.projects);
       }
     }
   }

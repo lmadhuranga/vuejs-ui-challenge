@@ -68,7 +68,7 @@
 </style>
 <template>
   <div id="userShift" class="panelMedium active">
-    <a class="panelClose">X</a>
+    <go-to-home></go-to-home>
     <div class="accordion">
       <navigator msg="Go To Add Manager" path="/setup/userAdd"></navigator>
       <div class="accordionBody active">
@@ -121,9 +121,11 @@
   import uuid from 'uuid'
   import TabHeaderCollection from "../../template/TabHeaderCollection";
   import Navigator from "../../template/Navigator";
+  import GoToHome from "../../template/GotoHome";
 
   export default {
     components: {
+      GoToHome,
       Navigator,
       TabHeaderCollection},
     name: 'ShiftAdd',
@@ -136,9 +138,12 @@
         (v) => !!v || 'Name is required',
         (v) => v && v.length <= 10 || 'Name must be less than 10 characters'
       ],
-
     }),
     methods: {
+      /**
+       * Add shif to the project
+       * @param newShift
+       */
       addShift (newShift) {
         if (!this.selectedproject.id) {
           this.$router.push('/setup/projectsList');
@@ -146,6 +151,9 @@
 
         newShift.id = uuid.v4();
         newShift.userId = this.$route.params.userId;
+        if(this.projects[this.selectedproject.id].shifts.length==0){
+          this.projects[this.selectedproject.id].shifts = [];
+        }
         this.projects[this.selectedproject.id].shifts.push(newShift);
         this.goToNext(this.selectedproject.id, newShift.id);
       },
