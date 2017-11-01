@@ -34,6 +34,26 @@
     margin-top: 20px;
     display: inline-block;
   }
+
+  .field {
+    padding: 10px 20px;
+    max-width: 360px;
+  }
+  .field input, .field textarea {
+    padding: 6px;
+    line-height: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .field label {
+    color: #888;
+    margin-bottom: 5px;
+    display: block;
+  }
+  h2{
+    font-size: 22px;
+    padding:30px 20px 10px;
+  }
 </style>
 <template>
   <div id="userAdd" class="panelMedium active">
@@ -48,49 +68,46 @@
           <div class="tabBody active">
             <div class="wall">
               <h2>Floor Manager Register</h2>
-              <v-form v-model="valid" ref="form" lazy-validation>
-                <v-text-field
-                  label="Full Name"
-                  v-model="user.name"
-                  :rules="nameRules"
-                  :counter="10"
-                  required
-                ></v-text-field>
+              <form v-model="valid" ref="form" lazy-validation>
 
-                <v-text-field
-                  label="E-mail"
-                  v-model="user.email"
-                  :rules="emailRules"
-                  required
-                ></v-text-field>
+                <div class="field">
+                  <label for="fulName">Full Name</label>
+                  <input id="fulName" type="text" placeholder="Full Name" v-model="user.name" :rules="nameRules" :counter="10" required>
+                </div>
 
-                <v-text-field
-                  label="Address"
-                  v-model="user.address"
-                  multi-line
-                ></v-text-field>
+                <div class="field">
+                  <label for="E-mail">E-mail</label>
+                  <input id="E-mail" type="text" placeholder="E-mail" v-model="user.email" :rules="emailRules" :counter="10" required>
+                </div>
 
-                <v-text-field
-                  label="Post Code"
-                  v-model="user.postCode"
-                ></v-text-field>
+                <div class="field">
+                  <label for="Address">Address</label>
+                  <textarea  id="Address" cols="30" rows="4" placeholder="Address" v-model="user.address"></textarea>
+                </div>
 
-                <v-text-field
-                  label="BTW Number"
-                  v-model="user.btwNumber"
-                ></v-text-field>
+                <div class="field">
+                  <label for="PostPode">Post Code</label>
+                  <input id="PostPode" type="text" placeholder="Post Code" v-model="user.postCode">
+                </div>
 
-                <v-text-field
-                  label="Kvk Number"
-                  v-model="user.kvkNumber"
-                ></v-text-field>
+                <div class="field">
+                  <label for="BTWNumber">BTW Number</label>
+                  <input  id="BTWNumber" type="text" placeholder="Address" v-model="user.btwNumber"></input>
+                </div>
 
-                <button
-                  @click="addUser(user)"
-                  :disabled="!valid"
-                >Plaats Shift
-                </button>
-              </v-form>
+                <div class="field">
+                  <label for="KvkNumber">Kvk Number</label>
+                  <input id="KvkNumber" type="text" placeholder="Kvk Number" v-model="user.kvkNumber">
+                </div>
+
+
+
+                <div class="field">
+                  <button @click="addUser(user)" :disabled="!valid" >Plaats Shift </button>
+                </div>
+
+
+              </form>
             </div>
           </div>
           <!-- e tab Zoeken -->
@@ -111,10 +128,11 @@
     components: {
       GoToHome,
       Navigator,
-      TabHeaderCollection},
+      TabHeaderCollection
+    },
     props: ['users'],
     data: () => ({
-      currentRoute:'userAdd',
+      currentRoute: 'userAdd',
       valid: true,
       user: {name: '', email: ''},
       nameRules: [

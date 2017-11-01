@@ -36,10 +36,6 @@
     visibility: hidden;
   }
 
-  .helpText {
-    margin-top: 20px;
-    display: inline-block;
-  }
 </style>
 <template>
   <div id="selectedShift">
@@ -47,9 +43,13 @@
     <div class="wall panelSmall active" style="display: block">
       <navigator path="/setup/projectsList"></navigator>
       <go-to-home></go-to-home>
-      <h2> {{shift.name}} Shift</h2>
-      <h3>{{project.name}} Project </h3>
-      <h4>Floor Manager {{floorManager.name}}</h4>
+      <h2> {{shift.name}} Shift Details</h2>
+      <p> IBAN Number :{{shift.iban}} </p>
+      <p> Description: {{shift.description}}</p>
+
+      <hr>
+      <h3>Project : {{project.name}}  </h3>
+      <h4>Floor Manager : {{floorManager.name}}</h4>
       <router-link :to="{ path: '/setup/projectsList'}">Projects List </router-link>
 
       <!-- e accordion wrap -->

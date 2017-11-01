@@ -1,38 +1,43 @@
 <style scoped>
   /*Home page wrapper*/
-  .homeWraper{
+  .homeWraper {
     background-size: cover;
     background: url('/static/img/map.png') center;
     height: 100vh;
   }
+
   .homeWraper .header {
     background: #1d0325;
     display: flex;
     justify-content: space-between;
   }
+
   .homeWraper .header img {
     height: 60px;
   }
 
-  .startScreen{
+  .startScreen {
     margin-left: 10%;
     margin-top: 10%;
   }
-  .startScreen h1{
+
+  .startScreen h1 {
     color: #fff;
     font-size: 24px;
     margin-bottom: 40px;
   }
-  .startScreen h3{
+
+  .startScreen h3 {
     color: #fff;
     font-size: 18px;
     margin-bottom: 20px;
   }
+
   .startScreen .field {
     padding: 10px;
   }
 
-  .startScreen .wall{
+  .startScreen .wall {
     background: #fff;
     max-width: 240px;
   }
@@ -57,52 +62,13 @@
 
     <!-- s wall -->
     <div class="wall">
-      <form action="/setup/projectsList">
+      <form onsubmit="formSubmit()">
         <div class="field">
           <label for="projectList">Project</label>
           <select id="projectList">
-            <option>Toppers in de ArenA sep '17</option>
-            <option>Toppers in de ArenA oct '18</option>
+            <option>Select Project</option>
+            <option v-for="project in projects" v-bind:key="project.id">{{project.name}}</option>
           </select>
-        </div>
-        <div class="field">
-          <label for="projectList">Functie</label>
-          <select id="projectList">
-            <option>Bediening: Hardwerkende ent</option>
-            <option>End: Hardwerkende ent</option>
-          </select>
-        </div>
-        <div class="flex">
-          <div class="field">
-            <label for="projectList">Functie</label>
-            <select id="projectList">
-              <option>Bediening: Hardwerkende ent</option>
-              <option>End: Hardwerkende ent</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="projectList">Functie</label>
-            <select id="projectList">
-              <option>Bediening: Hardwerkende ent</option>
-              <option>End: Hardwerkende ent</option>
-            </select>
-          </div>
-        </div>
-        <div class="flex">
-          <div class="field">
-            <label for="projectList">Functie</label>
-            <select id="projectList">
-              <option>Bediening: Hardwerkende ent</option>
-              <option>End: Hardwerkende ent</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="projectList">Functie</label>
-            <select name="projectList">
-              <option>Bediening: Hardwerkende ent</option>
-              <option>End: Hardwerkende ent</option>
-            </select>
-          </div>
         </div>
         <hr>
         <div class="field">
@@ -110,9 +76,10 @@
           <label for="rememberMe">Maak nog een shift</label>
         </div>
         <div class="field">
-          <router-link :to="{ path: '/setup/projectsList'}">Plaats Shift </router-link>
+          <button @click="formSubmit(event)">Plaats Shift</button>
         </div>
       </form>
+
     </div>
     <!-- e wall -->
   </div>
@@ -121,7 +88,12 @@
 
 <script>
   export default {
-    props: ['users','config'],
+    props: ['users', 'config', 'projects'],
+    methods: {
+      formSubmit(){
+        this.$router.push(`/setup/projectList`);
+      }
+    },
     data: () => ({
       valid: true,
       user: {name: '', email: ''},

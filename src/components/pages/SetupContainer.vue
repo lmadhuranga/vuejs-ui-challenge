@@ -33,52 +33,13 @@
       <h3>shift bij Loetje aan de Amstel +</h3>
       <!-- s wall -->
       <div class="wall">
-        <form>
+        <form onsubmit="formSubmit()">
           <div class="field">
             <label for="projectList">Project</label>
             <select id="projectList">
-              <option>Toppers in de ArenA sep '17</option>
-              <option>Toppers in de ArenA oct '18</option>
+              <option>Select Project</option>
+              <option v-for="project in projects" v-bind:key="project.id">{{project.name}}</option>
             </select>
-          </div>
-          <div class="field">
-            <label for="projectList">Functie</label>
-            <select id="projectList">
-              <option>Bediening: Hardwerkende ent</option>
-              <option>End: Hardwerkende ent</option>
-            </select>
-          </div>
-          <div class="flex">
-            <div class="field">
-              <label for="projectList">Functie</label>
-              <select id="projectList">
-                <option>Bediening: Hardwerkende ent</option>
-                <option>End: Hardwerkende ent</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="projectList">Functie</label>
-              <select id="projectList">
-                <option>Bediening: Hardwerkende ent</option>
-                <option>End: Hardwerkende ent</option>
-              </select>
-            </div>
-          </div>
-          <div class="flex">
-            <div class="field">
-              <label for="projectList">Functie</label>
-              <select id="projectList">
-                <option>Bediening: Hardwerkende ent</option>
-                <option>End: Hardwerkende ent</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="projectList">Functie</label>
-              <select name="projectList">
-                <option>Bediening: Hardwerkende ent</option>
-                <option>End: Hardwerkende ent</option>
-              </select>
-            </div>
           </div>
           <hr>
           <div class="field">
@@ -86,7 +47,7 @@
             <label for="rememberMe">Maak nog een shift</label>
           </div>
           <div class="field">
-            <button>Plaats Shift</button>
+            <button @click="formSubmit(event)">Plaats Shift</button>
           </div>
         </form>
       </div>
@@ -105,6 +66,12 @@
 <script>
   export default {
     components: {},
+    methods: {
+      formSubmit(event){
+        event.preventDefault()
+        this.$router.push(`/setup/projectList`);
+      }
+    },
     props: ['users', 'projects', 'selectedproject', 'config'],
     mounted(){
       this.config.isSidePanelOpen = true;
