@@ -25,14 +25,36 @@
     position: absolute;
     margin-left: -46px;
     margin-top: 15px;
-    padding: 7px 10px;
+    padding: 9px 10px 7px;
     background: #fff;
     border-radius: 100%;
+    color: #444;
+    text-decoration: none;
   }
 
   .panelMedium .helpText {
     margin-top: 20px;
     display: inline-block;
+  }
+
+  .field {
+    padding: 10px 20px;
+    max-width: 360px;
+  }
+  .field input, .field textarea {
+    padding: 6px;
+    line-height: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .field label {
+    color: #888;
+    margin-bottom: 5px;
+    display: block;
+  }
+  h2{
+    padding:30px 20px 10px;
+    font-size: 22px;
   }
 </style>
 <template>
@@ -49,18 +71,41 @@
             <div class="wall">
               <h2>Floor Manager Register</h2>
               <form v-model="valid" ref="form" lazy-validation>
-                <input type="text" placeholder="Full Name" v-model="user.name" :rules="nameRules" :counter="10" required>
-                <input type="text" placeholder="E-mail" v-model="user.email" :rules="emailRules" :counter="10" required>
-                <textarea  cols="30" rows="10" placeholder="Address" v-model="user.address"></textarea>
-                <input type="text" placeholder="Post Code" v-model="user.postCode">
-                <input type="text" placeholder="BTW Number" v-model="user.btwNumber">
-                <input type="text" placeholder="Kvk Number" v-model="user.kvkNumber">
 
+                <div class="field">
+                  <label for="fulName">Full Name</label>
+                  <input id="fulName" type="text" placeholder="Full Name" v-model="user.name" :rules="nameRules" :counter="10" required>
+                </div>
 
+                <div class="field">
+                  <label for="E-mail">E-mail</label>
+                  <input id="E-mail" type="text" placeholder="E-mail" v-model="user.email" :rules="emailRules" :counter="10" required>
+                </div>
 
+                <div class="field">
+                  <label for="Address">Address</label>
+                  <textarea  id="Address" cols="30" rows="4" placeholder="Address" v-model="user.address"></textarea>
+                </div>
 
+                <div class="field">
+                  <label for="PostPode">Post Code</label>
+                  <input id="PostPode" type="text" placeholder="Post Code" v-model="user.postCode">
+                </div>
 
-                <button @click="addUser(user)" :disabled="!valid" >Plaats Shift </button>
+                <div class="field">
+                  <label for="BTWNumber">BTW Number</label>
+                  <input  id="BTWNumber" type="text" placeholder="Address" v-model="user.btwNumber"></input>
+                </div>
+
+                <div class="field">
+                  <label for="KvkNumber">Kvk Number</label>
+                  <input id="KvkNumber" type="text" placeholder="Kvk Number" v-model="user.kvkNumber">
+                </div>
+
+                <div class="field">
+                  <button @click="addUser(user)" :disabled="!valid" >Plaats Shift </button>
+                </div>
+
               </form>
             </div>
           </div>

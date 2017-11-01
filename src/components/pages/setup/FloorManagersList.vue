@@ -38,9 +38,11 @@
     position: absolute;
     margin-left: -46px;
     margin-top: 15px;
-    padding: 7px 10px;
+    padding: 9px 10px 7px;
     background: #fff;
     border-radius: 100%;
+    color: #444;
+    text-decoration: none;
   }
 
   .panelMedium .tabHeaderCollection a {

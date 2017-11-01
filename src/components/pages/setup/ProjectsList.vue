@@ -35,10 +35,12 @@
     position: absolute;
     visibility: hidden;
   }
-
-  .helpText {
-    margin-top: 20px;
-    display: inline-block;
+  .panelFooter img{
+    width: 100%;
+    margin-bottom:1px;
+  }
+  .panelFooter{
+    
   }
 </style>
 
@@ -55,7 +57,7 @@
 
       <!-- e accordion wrap -->
       <div class="panelFooter">
-        <img src="panelFooter.jpg"/>
+        <img src="/static/img/panelFooter.png"/>
       </div>
     </div>
     <!-- e panel small -->
