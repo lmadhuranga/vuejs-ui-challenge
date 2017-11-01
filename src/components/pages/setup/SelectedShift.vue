@@ -1,3 +1,6 @@
+<style scoped>
+</style>
+
 <template id="personDetails">
   <v-container>
     <h2> {{shift.name}} Shift</h2>

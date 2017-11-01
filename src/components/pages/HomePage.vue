@@ -1,44 +1,137 @@
+<style scoped>
+  /*Home page wrapper*/
+  .homeWraper {
+    background-size: cover;
+    background: url('/static/img/map.png') center;
+    height: 100vh;
+  }
+
+  .homeWraper .header {
+    background: #1d0325;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .homeWraper .header img {
+    height: 60px;
+  }
+
+  /* Start screen*/
+  .startScreen {
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+
+  .startScreen h1 {
+    color: #fff;
+    font-size: 24px;
+  }
+
+  .startScreen h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .startScreen .wall {
+    background: #fff;
+    max-width: 240px;
+  }
+
+  /*Side panel*/
+  .panelSmall {
+    position: fixed;
+    top: 0;
+    background: #fff;
+    max-width: 400px;
+    height: 100vh;
+    right: 0;
+  }
+
+</style>
+
 <template>
-  <v-app toolbar--fixed toolbar style="overflow: hidden">
-    <!--<nav-bar title="Home Page" :isNew="false"></nav-bar>-->
-    <main
-      style="max-height: 600px;"
-      class="scroll-y"
-      id="scrolling-techniques"
-    >
-      <h2>Home Page</h2>
+  <div class="homeWraper">
 
-      <v-form v-model="valid" ref="form" lazy-validation>
-        <v-text-field
-          label="Name"
-          v-model="user.name"
-          :rules="nameRules"
-          :counter="10"
-          required
-        ></v-text-field>
-        <v-text-field
-          label="E-mail"
-          v-model="user.email"
-          :rules="emailRules"
-          required
-        ></v-text-field>
-        <v-text-field
-          label="About"
-          v-model="user.about"
-          multi-line
-        ></v-text-field>
+    <div class="left">
+      <!-- s header -->
+      <div class="header">
+        <div class="logo">
+          <img src="/static/img/logo.png">
+        </div>
+        <div class="user">
+          <img src="/static/img/user.png">
+        </div>
+      </div>
+      <!-- e header -->
+      <div class="startScreen">
+        <h1>Ervaren Freelancers <strong>On-Demand.</strong></h1>
+        <h3>shift bij Loetje aan de Amstel +</h3>
 
-        <v-btn
-          class="btn-add-user"
-          @click="addUser(user)"
-          :disabled="!valid"
-        >
-          Add User
-        </v-btn>
-        <router-link :to="{ path: 'setup/projectsList'}">Select Floor Manager</router-link>
-      </v-form>
-    </main>
-  </v-app>
+        <!-- s wall -->
+        <div class="wall">
+          <form action="/setup/projectsList">
+            <div class="field">
+              <label for="projectList">Project</label>
+              <select id="projectList">
+                <option>Toppers in de ArenA sep '17</option>
+                <option>Toppers in de ArenA oct '18</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="projectList">Functie</label>
+              <select id="projectList">
+                <option>Bediening: Hardwerkende ent</option>
+                <option>End: Hardwerkende ent</option>
+              </select>
+            </div>
+            <div class="flex">
+              <div class="field">
+                <label for="projectList">Functie</label>
+                <select id="projectList">
+                  <option>Bediening: Hardwerkende ent</option>
+                  <option>End: Hardwerkende ent</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="projectList">Functie</label>
+                <select id="projectList">
+                  <option>Bediening: Hardwerkende ent</option>
+                  <option>End: Hardwerkende ent</option>
+                </select>
+              </div>
+            </div>
+            <div class="flex">
+              <div class="field">
+                <label for="projectList">Functie</label>
+                <select id="projectList">
+                  <option>Bediening: Hardwerkende ent</option>
+                  <option>End: Hardwerkende ent</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="projectList">Functie</label>
+                <select name="projectList">
+                  <option>Bediening: Hardwerkende ent</option>
+                  <option>End: Hardwerkende ent</option>
+                </select>
+              </div>
+            </div>
+            <hr>
+            <div class="field">
+              <input type="checkbx" name="rememberMe" id="rememberMe">
+              <label for="rememberMe">Maak nog een shift</label>
+            </div>
+            <div class="field">
+              <router-link :to="{ path: '/setup/projectsList'}">Plaats Shift </router-link>
+            </div>
+          </form>
+        </div>
+        <!-- e wall -->
+      </div>
+      <!-- e start screen -->
+    </div> <!--left panel-->
+  </div> <!--homeWraper-->
 </template>
 
 <script>

@@ -1,3 +1,5 @@
+<style scoped>
+</style>
 <template id="userAdd">
   <v-container>
     <h2>Floor Manager Register</h2>

@@ -1,3 +1,6 @@
+<style scoped>
+</style>
+
 <template id="userAdd">
   <v-container>
     <h2>Shift Add</h2>

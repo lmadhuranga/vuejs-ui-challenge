@@ -1,3 +1,5 @@
+<style scoped>
+</style>
 <template>
   <v-app toolbar--fixed toolbar style="overflow: hidden">
     <main
