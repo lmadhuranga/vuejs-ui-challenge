@@ -77,7 +77,7 @@
   <div id="floorManagersList" class="panelMedium active">
     <go-to-home></go-to-home>
     <div class="accordion">
-      <navigator msg="Go To Home" path="/setup/"></navigator>
+      <navigator msg="Go Projects" path="/setup/projectsList"></navigator>
       <div class="accordionBody active">
         <tab-header-collection :currentRoute="currentRoute"></tab-header-collection>
         <div class="tabBodyCollection">

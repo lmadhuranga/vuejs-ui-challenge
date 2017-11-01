@@ -1,65 +1,35 @@
 <style scoped>
-  /*Home page wrapper*/
-  .homeWraper {
-    background-size: cover;
-    background: url('/static/img/map.png') center;
-    height: 100vh;
-  }
-
-  .homeWraper .header {
-    background: #1d0325;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .homeWraper .header img {
-    height: 60px;
-  }
-
-  .startScreen {
+  .mainScreen {
     margin-left: 10%;
     margin-top: 10%;
   }
 
-  .startScreen h1 {
+  .mainScreen h1 {
     color: #fff;
     font-size: 24px;
     margin-bottom: 40px;
   }
 
-  .startScreen h3 {
+  .mainScreen h3 {
     color: #fff;
     font-size: 18px;
     margin-bottom: 20px;
   }
 
-  .startScreen .field {
+  .mainScreen .field {
     padding: 10px;
   }
 
-  .startScreen .wall {
+  .mainScreen .wall {
     background: #fff;
     max-width: 240px;
   }
-
-  /*Side panel*/
-  .panelSmall {
-    position: fixed;
-    top: 0;
-    background: #fff;
-    max-width: 400px;
-    height: 100vh;
-    right: 0;
-  }
-
 </style>
 
 <template>
-  <!-- e header -->
-  <div class="startScreen">
+  <div class="mainScreen">
     <h1>Ervaren Freelancers <strong>On-Demand.</strong></h1>
     <h3>shift bij Loetje aan de Amstel +</h3>
-
     <!-- s wall -->
     <div class="wall">
       <form onsubmit="formSubmit()">
@@ -79,11 +49,10 @@
           <button @click="formSubmit(event)">Plaats Shift</button>
         </div>
       </form>
-
     </div>
     <!-- e wall -->
   </div>
-  <!-- e start screen -->
+  <!-- e end mainScreen -->
 </template>
 
 <script>

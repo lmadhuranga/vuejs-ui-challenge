@@ -20,7 +20,7 @@
 </style>
 <template>
   <div class="tabHeaderCollection">
-    <router-link class="tabHeader" :class="{ active: this.floorManagersList}" :to="{ path: this.getSetupUrl('floorManagersList')}">Select Floor Manager</router-link>
+    <router-link class="tabHeader" :class="{ active: this.floorManagersList}" :to="{ path: this.getSetupUrl('floorManagersList')}">Select Manager</router-link>
     <router-link class="tabHeader" :class="{ active: this.userAdd}" :to="{ path: this.getSetupUrl('userAdd')}">Add Manager</router-link>
     <router-link class="tabHeader" :class="{ active: this.shiftAdd}" :to="{ path: this.getSetupUrl('shiftAdd')}">Add Shift</router-link>
   </div>

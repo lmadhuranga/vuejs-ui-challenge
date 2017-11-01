@@ -2,7 +2,7 @@ export default {
   users: [
     {
       id: 1,
-      name: 'Madhuranga Sendheera',
+      name: 'Madhuranga',
       address: 'Colombo, Sri Lanka',
       postCode: '12344',
       btwNumber: '12345',
@@ -10,7 +10,7 @@ export default {
     },
     {
       id: 2,
-      name: 'Randika Senadheera',
+      name: 'Randika',
       address: 'Colombo, Sri Lanka',
       postCode: '12344',
       btwNumber: '12345',

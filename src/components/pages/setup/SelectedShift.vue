@@ -41,7 +41,7 @@
   <div id="selectedShift">
     <!-- s panel small -->
     <div class="wall panelSmall active" style="display: block">
-      <navigator path="/setup/projectsList"></navigator>
+      <navigator msg="Go To Projects List" path="/setup/projectsList"></navigator>
       <go-to-home></go-to-home>
       <h2> {{shift.name}} Shift Details</h2>
       <p> IBAN Number :{{shift.iban}} </p>
