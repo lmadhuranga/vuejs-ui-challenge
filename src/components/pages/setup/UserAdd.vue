@@ -83,198 +83,57 @@
           <!-- s tab Zoeken -->
           <div class="tabBody active">
             <div class="wall">
-              <p>
-                Hier drie regels introducerende tekst. Wet kan je hier doen en waarom wil je dat. Hier dire regels introducerende tekst.
-                Wat kan je hier doen.
-                <img src="prsentage25.png">
-              </p>
+              <h2>Floor Manager Register</h2>
+              <v-form v-model="valid" ref="form" lazy-validation>
+                <v-text-field
+                  label="Full Name"
+                  v-model="user.name"
+                  :rules="nameRules"
+                  :counter="10"
+                  required
+                ></v-text-field>
 
-              <form>
-                <div class="field">
-                  <label >Project</label>
-                  <input type="text" name="name"/>
-                  <span class="hint"></span>
-                  <img src="ico_buld.svg">
-                  <strong>KVK number</strong>
-                  <small>
-                    Hier een mooi stukije tekst over waarom je
-                    hier een kvk number in dienst te Vullen.
-                  </small>
-                </div>
-                <div class="field">
-                  <button>Plaats Shift</button>
-                </div>
-              </form>
+                <v-text-field
+                  label="E-mail"
+                  v-model="user.email"
+                  :rules="emailRules"
+                  required
+                ></v-text-field>
 
+                <v-text-field
+                  label="Address"
+                  v-model="user.address"
+                  multi-line
+                ></v-text-field>
 
-              <ul>
-                <li>
-                  <p>Loetje Breukelen B.V.</p>
-                  <small>Stationsweg 1, Breukelen</small>
-                </li>
-                <li>
-                  <p>Linke Loetje B.V</p>
-                  <small>Loet 6, Schagen</small>
-                </li>
-                <li>
-                  <p>Loetje Zeewolde B.V</p>
-                  <small>Kerkstraat 19, Zeewolde</small>
-                </li>
-              </ul>
+                <v-text-field
+                  label="Post Code"
+                  v-model="user.postCode"
+                ></v-text-field>
 
+                <v-text-field
+                  label="BTW Number"
+                  v-model="user.btwNumber"
+                ></v-text-field>
+
+                <v-text-field
+                  label="Kvk Number"
+                  v-model="user.kvkNumber"
+                ></v-text-field>
+
+                <button
+                  @click="addUser(user)"
+                  :disabled="!valid"
+                >Plaats Shift
+                </button>
+              </v-form>
             </div>
           </div>
           <!-- e tab Zoeken -->
-
-
-          <!-- s tab Algemeen -->
-          <div style="display: none" class="tabBody">
-            <div class="wall">
-              <p>
-                Hier drie regels introducerende tekst. Wet kan je hier doen en waarom wil je dat. Hier dire regels introducerende tekst.
-                Wat kan je hier doen.
-                <img src="prsentage25.png">
-              </p>
-
-              <form>
-                <div class="field">
-                  <label for="projectList">Project</label>
-                  <input type="text" name="name"/>
-                  <span class="hint"></span>
-                  <img src="ico_buld.svg">
-                  <strong>KVK number</strong>
-                  <small>
-                    Hier een mooi stukije tekst over waarom je
-                    hier een kvk number in dienst te Vullen.
-                  </small>
-                </div>
-                <div class="field">
-                  <button>Plaats Shift</button>
-                </div>
-              </form>
-
-
-              <ul>
-                <li>
-                  <p>Loetje Breukelen B.V.</p>
-                  <small>Stationsweg 1, Breukelen</small>
-                </li>
-                <li>
-                  <p>Linke Loetje B.V</p>
-                  <small>Loet 6, Schagen</small>
-                </li>
-                <li>
-                  <p>Loetje Zeewolde B.V</p>
-                  <small>Kerkstraat 19, Zeewolde</small>
-                </li>
-              </ul>
-
-
-            </div>
-          </div>
-          <!-- e tab Algemeen -->
-
-
-          <!-- s tab Facturatie -->
-          <div style="display: none" class="tabBody">
-            <div class="wall">
-              <p>
-                Hier drie regels introducerende tekst. Wet kan je hier doen en waarom wil je dat. Hier dire regels introducerende tekst.
-                Wat kan je hier doen.
-                <img src="prsentage25.png">
-              </p>
-
-              <form>
-                <div class="field">
-                  <label for="projectList">Project</label>
-                  <input type="text" name="name" id="projectList"/>
-                  <span class="hint"></span>
-                  <img src="ico_buld.svg">
-                  <strong>KVK number</strong>
-                  <small>
-                    Hier een mooi stukije tekst over waarom je
-                    hier een kvk number in dienst te Vullen.
-                  </small>
-                </div>
-                <div class="field">
-                  <button>Plaats Shift</button>
-                </div>
-              </form>
-
-
-              <ul>
-                <li>
-                  <p>Loetje Breukelen B.V.</p>
-                  <small>Stationsweg 1, Breukelen</small>
-                </li>
-                <li>
-                  <p>Linke Loetje B.V</p>
-                  <small>Loet 6, Schagen</small>
-                </li>
-                <li>
-                  <p>Loetje Zeewolde B.V</p>
-                  <small>Kerkstraat 19, Zeewolde</small>
-                </li>
-              </ul>
-
-
-            </div>
-          </div>
-          <!-- e tab Facturatie -->
-
         </div>
       </div>
     </div>
   </div>
-
-  <!--<v-container>
-    <h2>Floor Manager Register</h2>
-    <v-form v-model="valid" ref="form" lazy-validation>
-      <v-text-field
-        label="Full Name"
-        v-model="user.name"
-        :rules="nameRules"
-        :counter="10"
-        required
-      ></v-text-field>
-
-      <v-text-field
-        label="E-mail"
-        v-model="user.email"
-        :rules="emailRules"
-        required
-      ></v-text-field>
-
-      <v-text-field
-        label="Address"
-        v-model="user.address"
-        multi-line
-      ></v-text-field>
-
-      <v-text-field
-        label="Post Code"
-        v-model="user.postCode"
-      ></v-text-field>
-
-      <v-text-field
-        label="BTW Number"
-        v-model="user.btwNumber"
-      ></v-text-field>
-
-      <v-text-field
-        label="Kvk Number"
-        v-model="user.kvkNumber"
-      ></v-text-field>
-
-      <v-btn
-        class="btn-add-user"
-        @click="addUser(user)"
-        :disabled="!valid"
-      >
-        Add User
-      </v-btn>
-    </v-form>
-  </v-container>-->
 </template>
 
 

@@ -1,47 +1,62 @@
+<style scoped>
+  .radioBtnBoxWrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .radioBtnBox {
+    max-width: calc(50% - 10px);
+  }
+
+  .radioBtnBox .wall {
+    height: 100%;
+    padding: 5px;
+    background: #efefef;
+    display: block;
+    cursor: pointer;
+  }
+
+  .radioBtnBox [name="slectShift"]:checked + .wall {
+    background: #7664cc;
+  }
+
+  .accordionBody {
+    padding: 20px;
+    display: none;
+  }
+
+  .accordionBody.active {
+    display: block;
+  }
+
+  .accordionHeader {
+    padding: 20px;
+  }
+</style>
 <template>
-  <v-container>
-    <v-list>
-      <v-list-group :value="false" v-for="project in projects" v-bind:key="project.id">
-        <!-- Header element-->
-        <v-list-tile slot="item" @click="">
-          <v-list-tile-action>
-            <v-icon>person_outline</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>{{project.name}}</v-list-tile-title>
-          </v-list-tile-content>
-          <v-list-tile-action>
-            <v-icon>keyboard_arrow_down</v-icon>
-          </v-list-tile-action>
-        </v-list-tile>
+  <!-- s accordion wrap -->
+  <div id="projectListMenu">
+    <div class="accordion" v-for="project in projects" v-bind:key="project.id">
+      <div class="accordionHeader"> {{project.name}} <span></span></div>
+      <div class="accordionBody active" @click="selectedShift(project.id, shift.id)">
+        <form class="radioBtnBoxWrap">
+          <div class="radioBtnBox" v-for="shift in project.shifts" v-bind:key="shift.id">
+            <input type="radio" name="slectShift" id="boxOne">
+            <label for="boxOne" class="wall">
+              <span class="radioBtnIco"></span>
+              <h3>{{shift.name}}</h3>
+              <small>Kiezen Voor zekerheid</small>
+              <p>De prijs past zich aan de vraag aan, maar blijft altijd tussen 80 en 120 procent
+                van de door jou gekozen prijs uurprijs.</p>
+            </label>
+          </div>
+        </form>
 
-        <!--New Shift-->
-        <v-list-tile v-bind:key="10000" @click="selectedShift(project.id)">
-          <v-list-tile-content>
-            <v-list-tile-title>
-              Add Shift
-            </v-list-tile-title>
-          </v-list-tile-content>
-          <v-list-tile-action>
-            <v-icon>add</v-icon>
-          </v-list-tile-action>
-        </v-list-tile>
-
-        <!--List the project's shift list-->
-        <v-list-tile v-for="shift in project.shifts" v-bind:key="shift.id" @click="selectedShift(project.id, shift.id)">
-          <v-list-tile-content>
-            <v-list-tile-title>
-              {{shift.name}}
-            </v-list-tile-title>
-          </v-list-tile-content>
-          <v-list-tile-action>
-            <v-icon>school</v-icon>
-          </v-list-tile-action>
-        </v-list-tile>
-      </v-list-group>
-
-    </v-list>
-  </v-container>
+        <span class="helpText">Wij helpen je kiezen: <a href="#" @click="selectedShift(project.id)">hoe wil je je prijs instellen?</a> </span>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
