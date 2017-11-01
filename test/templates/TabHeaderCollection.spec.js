@@ -10,22 +10,17 @@ describe('TabHeaderCollection.vue', () => {
   });
 
   beforeEach(() => {
-    msg = 'Go to home page';
-    path = '/setup/';
+    currentRoute = 'addUser';
 
     cmp = createCmp({
-      msg, path
+      currentRoute
     });
   });
 
-  it('should be able load given path for link', () => {
-    expect(cmp.vm.path).toEqual(path);
-    expect(cmp.find('.accordionHeader a').element.getAttribute('href')).toEqual(`#${path}`);
+  it('should be able load prop values', () => {
+    expect(cmp.vm.currentRoute).toEqual(currentRoute);
   });
 
-  it('should be load the label of the link', () => {
-    expect(cmp.vm.msg).toEqual(msg);
-    expect(cmp.find('.accordionHeader a').text().trim()).toEqual("<  Go to home page");
-  });
+
 
 });

@@ -1,5 +1,5 @@
 <template id="navigator">
-  <router-link class="panelClose" :to="{ path: '/setup'}"> X </router-link>
+  <router-link class="panelClose" :to="{ path: '/setup'}">X</router-link>
 </template>
 
 <script>

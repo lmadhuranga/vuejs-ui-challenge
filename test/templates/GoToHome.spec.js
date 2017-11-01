@@ -13,7 +13,7 @@ describe('GotoHome.vue', () => {
     cmp = createCmp({});
   });
 
-  it('should be able load projects and selectedProject', () => {
+  it('should be able load correct label', () => {
     expect(cmp.find('.panelClose').text().trim()).toEqual('X');
   });
 

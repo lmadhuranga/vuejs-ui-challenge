@@ -25,7 +25,7 @@ describe('Navigator.vue', () => {
 
   it('should be load the label of the link', () => {
     expect(cmp.vm.msg).toEqual(msg);
-    expect(cmp.find('.accordionHeader a').text().trim()).toEqual("<  Go to home page");
+    expect(cmp.find('.accordionHeader a').text().trim()).toEqual("<");
   });
 
 });

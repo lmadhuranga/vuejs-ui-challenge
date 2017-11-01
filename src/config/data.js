@@ -40,36 +40,11 @@ export default {
     },
     2: {
       id: 1,
-      name: 'Project 2',
-      shifts: [
-        {
-          id: 1,
-          name: 'shift1',
-          iban: 'IbanDetails',
-          description: 'description',
-          userId: 1
-        }
-      ]
+      name: 'Project 2'
     },
     3: {
       id: 1,
-      name: 'Project 3',
-      shifts: [
-        {
-          id: 1,
-          name: 'shift1',
-          iban: 'IbanDetails',
-          description: 'description',
-          userId: 1
-        },
-        {
-          id: 2,
-          name: 'shift2',
-          iban: 'IbanDetails',
-          description: 'description',
-          userId: 2
-        }
-      ]
+      name: 'Project 3'
     }
   }
 }
