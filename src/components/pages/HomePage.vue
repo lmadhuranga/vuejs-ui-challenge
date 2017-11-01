@@ -2,7 +2,7 @@
   /*Home page wrapper*/
   .homeWraper{
     background-size: cover;
-    background: url('map/img/map.png') center;
+    background: url('/static/img/map.png') center;
     height: 100vh;
   }
   .homeWraper .header {
