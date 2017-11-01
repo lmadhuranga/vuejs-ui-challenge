@@ -14,6 +14,6 @@ describe("HomePage", () => {
   });
 
   it('Should be load page header', () => {
-    expect(cmp.find('h2').text()).toEqual('Home Page')
+    expect(cmp.find('h1').text()).toEqual('Ervaren Freelancers On-Demand.')
   });
 });

@@ -24,7 +24,6 @@ describe("SetupContainer", () => {
   });
 
   it('should be able load projects', () => {
-    console.log('mad_msg__cmp.vm.projects',cmp.vm.projects)
     expect(cmp.vm.projects).toEqual(projects);
   });
 
