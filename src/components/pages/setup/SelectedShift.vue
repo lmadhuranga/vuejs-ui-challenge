@@ -1,40 +1,26 @@
 <style scoped>
-  .panelMedium {
+  .panelSmall {
     position: fixed;
     top: 0;
     background: #fff;
-    max-width: 600px;
+    max-width: 400px;
     height: 100vh;
     right: 0;
-    width: 100%;
   }
 
-  .panelMedium.active:after {
+  .panelSmall.active:after {
     display: block;
     content: " ";
     position: fixed;
     width: 100%;
     height: 100%;
     background: rgba(15, 4, 35, 0.63);
-    right: 600px;
+    right: 400px;
     top: 0;
     z-index: -15;
   }
 
-  .panelMedium .accordionBody {
-    /*padding: 20px;*/
-    display: none;
-  }
-
-  .panelMedium .accordionBody.active {
-    display: block;
-  }
-
-  .panelMedium .accordionHeader {
-    padding: 20px;
-  }
-
-  .panelMedium .panelClose {
+  .panelSmall .panelClose {
     position: absolute;
     margin-left: -46px;
     margin-top: 15px;
@@ -43,50 +29,37 @@
     border-radius: 100%;
   }
 
-  .panelMedium .tabHeaderCollection a {
-    color: #9E9E9E;
-    text-decoration: none;
-    padding-bottom: 10px;
-    border-bottom: 2px solid;
-    width: 100%;
-    text-align: center;
+  [name="slectShift"] {
+    width: 0;
+    height: 0;
+    position: absolute;
+    visibility: hidden;
   }
 
-  .panelMedium .tabHeaderCollection a.active {
-    color: #7c2bad;
-  }
-
-  .panelMedium .tabHeaderCollection {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  .panelMedium .helpText {
+  .helpText {
     margin-top: 20px;
     display: inline-block;
   }
 </style>
 <template>
-  <div id="selectedShift" class="panelMedium active">
-    <go-to-home></go-to-home>
-    <div class="accordion">
-      <navigator msg="Go To Home" path="/setup"></navigator>
-      <div class="accordionBody active">
-        <tab-header-collection :currentRoute="currentRoute"></tab-header-collection>
-        <div class="tabBodyCollection">
+  <div id="selectedShift">
+    <!-- s panel small -->
+    <div class="wall panelSmall active" style="display: block">
+      <go-to-home></go-to-home>
+      <h2> {{shift.name}} Shift</h2>
+      <h3>{{project.name}} Project </h3>
+      <h4>Floor Manager {{floorManager.name}}</h4>
+      <router-link :to="{ path: '/setup/projectsList'}">Projects List </router-link>
 
-          <!-- s tab Zoeken -->
-          <div class="tabBody active">
-            <h2> {{shift.name}} Shift</h2>
-            <h3>{{project.name}} Project </h3>
-            <h4>Floor Manager {{floorManager.name}}</h4>
-            <router-link :to="{ path: '/setup/projectsList'}">Projects List </router-link>
-          </div>
-          <!-- e tab Zoeken -->
-        </div>
+      <!-- e accordion wrap -->
+      <div class="panelFooter">
+        <img src="panelFooter.jpg"/>
       </div>
     </div>
+    <!-- e panel small -->
   </div>
+  <!-- e #projectList-->
+
 </template>
 <script>
   import _ from 'lodash'

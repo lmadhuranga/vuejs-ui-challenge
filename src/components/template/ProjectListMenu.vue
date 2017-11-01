@@ -1,15 +1,15 @@
 <style scoped>
-  .radioBtnBoxWrap {
+  .panelSmall .radioBtnBoxWrap {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
   }
 
-  .radioBtnBox {
+  .panelSmall .radioBtnBox {
     max-width: calc(50% - 10px);
   }
 
-  .radioBtnBox .wall {
+  .panelSmall .radioBtnBox .wall {
     height: 100%;
     padding: 5px;
     background: #efefef;
@@ -17,21 +17,36 @@
     cursor: pointer;
   }
 
-  .radioBtnBox [name="slectShift"]:checked + .wall {
+  .panelSmall .radioBtnBox [name="slectShift"]:checked + .wall {
     background: #7664cc;
   }
-
-  .accordionBody {
+  .panelSmall .accordionBody {
     padding: 20px;
     display: none;
   }
-
-  .accordionBody.active {
+  .panelSmall .accordionBody.active {
     display: block;
   }
-
-  .accordionHeader {
+  .panelSmall .accordionHeader {
     padding: 20px;
+  }
+  .panelSmall .panelClose {
+    position: absolute;
+    margin-left: -46px;
+    margin-top: 15px;
+    padding: 7px 10px;
+    background: #fff;
+    border-radius: 100%;
+  }
+  [name="slectShift"] {
+    width: 0;
+    height: 0;
+    position: absolute;
+    visibility: hidden;
+  }
+  .helpText{
+    margin-top: 20px;
+    display: inline-block;
   }
 </style>
 <template>
