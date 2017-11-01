@@ -160,7 +160,10 @@
     components: {
       NavBar,
     },
-    props: ['users', 'projects', 'selectedproject']
+    props: ['users', 'projects', 'selectedproject', 'config'],
+    mounted(){
+      this.config.isSidePanelOpen = true;
+    }
 
   }
 </script>

@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <router-view :users="users" :projects="projects" :selectedproject="selectedproject"></router-view>
+    <router-view
+      :users="users"
+      :projects="projects"
+      :selectedproject="selectedproject"
+      :config="config"
+    ></router-view>
   </div>
 </template>
 
@@ -12,7 +17,10 @@
       return {
         users: [],
         projects: [],
-        selectedproject: {name: '', id: ''}
+        selectedproject: {name: '', id: ''},
+        config: {
+          isSidePanelOpen: false
+        }
       }
     },
     mounted(){

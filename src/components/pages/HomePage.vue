@@ -1,39 +1,38 @@
 <style scoped>
   /*Home page wrapper*/
-  .homeWraper {
+  .homeWraper{
     background-size: cover;
-    background: url('/static/img/map.png') center;
+    background: url('map/img/map.png') center;
     height: 100vh;
   }
-
   .homeWraper .header {
     background: #1d0325;
     display: flex;
     justify-content: space-between;
   }
-
   .homeWraper .header img {
     height: 60px;
   }
 
-  /* Start screen*/
-  .startScreen {
+  .startScreen{
     margin-left: 10%;
     margin-top: 10%;
   }
-
-  .startScreen h1 {
+  .startScreen h1{
     color: #fff;
     font-size: 24px;
+    margin-bottom: 40px;
   }
-
-  .startScreen h3 {
+  .startScreen h3{
     color: #fff;
     font-size: 18px;
     margin-bottom: 20px;
   }
+  .startScreen .field {
+    padding: 10px;
+  }
 
-  .startScreen .wall {
+  .startScreen .wall{
     background: #fff;
     max-width: 240px;
   }
@@ -136,7 +135,7 @@
 
 <script>
   export default {
-    props: ['users'],
+    props: ['users','config'],
     data: () => ({
       valid: true,
       user: {name: '', email: ''},
