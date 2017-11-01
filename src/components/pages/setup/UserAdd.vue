@@ -48,49 +48,20 @@
           <div class="tabBody active">
             <div class="wall">
               <h2>Floor Manager Register</h2>
-              <v-form v-model="valid" ref="form" lazy-validation>
-                <v-text-field
-                  label="Full Name"
-                  v-model="user.name"
-                  :rules="nameRules"
-                  :counter="10"
-                  required
-                ></v-text-field>
+              <form v-model="valid" ref="form" lazy-validation>
+                <input type="text" placeholder="Full Name" v-model="user.name" :rules="nameRules" :counter="10" required>
+                <input type="text" placeholder="E-mail" v-model="user.email" :rules="emailRules" :counter="10" required>
+                <textarea  cols="30" rows="10" placeholder="Address" v-model="user.address"></textarea>
+                <input type="text" placeholder="Post Code" v-model="user.postCode">
+                <input type="text" placeholder="BTW Number" v-model="user.btwNumber">
+                <input type="text" placeholder="Kvk Number" v-model="user.kvkNumber">
 
-                <v-text-field
-                  label="E-mail"
-                  v-model="user.email"
-                  :rules="emailRules"
-                  required
-                ></v-text-field>
 
-                <v-text-field
-                  label="Address"
-                  v-model="user.address"
-                  multi-line
-                ></v-text-field>
 
-                <v-text-field
-                  label="Post Code"
-                  v-model="user.postCode"
-                ></v-text-field>
 
-                <v-text-field
-                  label="BTW Number"
-                  v-model="user.btwNumber"
-                ></v-text-field>
 
-                <v-text-field
-                  label="Kvk Number"
-                  v-model="user.kvkNumber"
-                ></v-text-field>
-
-                <button
-                  @click="addUser(user)"
-                  :disabled="!valid"
-                >Plaats Shift
-                </button>
-              </v-form>
+                <button @click="addUser(user)" :disabled="!valid" >Plaats Shift </button>
+              </form>
             </div>
           </div>
           <!-- e tab Zoeken -->
@@ -111,10 +82,11 @@
     components: {
       GoToHome,
       Navigator,
-      TabHeaderCollection},
+      TabHeaderCollection
+    },
     props: ['users'],
     data: () => ({
-      currentRoute:'userAdd',
+      currentRoute: 'userAdd',
       valid: true,
       user: {name: '', email: ''},
       nameRules: [
