@@ -25,9 +25,11 @@
     position: absolute;
     margin-left: -46px;
     margin-top: 15px;
-    padding: 7px 10px;
+    padding: 9px 10px 7px;
     background: #fff;
     border-radius: 100%;
+    color: #444;
+    text-decoration: none;
   }
 
   .panelMedium .helpText {
@@ -51,8 +53,8 @@
     display: block;
   }
   h2{
-    font-size: 22px;
     padding:30px 20px 10px;
+    font-size: 22px;
   }
 </style>
 <template>
@@ -100,12 +102,9 @@
                   <input id="KvkNumber" type="text" placeholder="Kvk Number" v-model="user.kvkNumber">
                 </div>
 
-
-
                 <div class="field">
                   <button @click="addUser(user)" :disabled="!valid" >Plaats Shift </button>
                 </div>
-
 
               </form>
             </div>

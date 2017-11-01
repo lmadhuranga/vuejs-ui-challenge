@@ -38,9 +38,11 @@
     position: absolute;
     margin-left: -46px;
     margin-top: 15px;
-    padding: 7px 10px;
+    padding: 9px 10px 7px;
     background: #fff;
     border-radius: 100%;
+    color: #444;
+    text-decoration: none;
   }
 
   .panelMedium .tabHeaderCollection a {
@@ -65,6 +67,26 @@
     margin-top: 20px;
     display: inline-block;
   }
+
+  .field {
+    padding: 10px 20px;
+    max-width: 360px;
+  }
+  .field input, .field textarea {
+    padding: 6px;
+    line-height: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .field label {
+    color: #888;
+    margin-bottom: 5px;
+    display: block;
+  }
+  h2{
+    padding:30px 20px 10px;
+    font-size: 22px;
+  }
 </style>
 <template>
   <div id="userShift" class="panelMedium active">
@@ -79,33 +101,27 @@
           <div class="tabBody active">
             <div class="wall">
               <h2>Shift Add</h2>
-              <v-form v-model="valid" ref="form" lazy-validation>
-                <v-text-field
-                  label="Shift Name"
-                  v-model="shift.name"
-                  :rules="nameRules"
-                  :counter="10"
-                  required
-                ></v-text-field>
-                <v-text-field
-                  label="IBAN"
-                  v-model="shift.idban"
-                  required
-                ></v-text-field>
-                <v-text-field
-                  label="Description"
-                  v-model="shift.description"
-                  multi-line
-                ></v-text-field>
+              <form v-model="valid" ref="form" lazy-validation>
+                <div class="field">
+                  <label for="name">Shift Name</label>
+                  <input id="name" type="text" placeholder="Name" v-model="shift.name" :rules="nameRules" :counter="10" required>
+                </div>
 
-                <v-btn
-                  class="btn-add-user"
-                  @click="addShift(shift)"
-                  :disabled="!valid"
-                >
-                  Add Shift
-                </v-btn>
-              </v-form>
+                <div class="field">
+                  <label for="idban">IBAN</label>
+                  <input id="idban" type="text" placeholder="IBAN" v-model="shift.idban"   :counter="10" required>
+                </div>
+
+                <div class="field">
+                  <label for="description">Description</label>
+                  <textarea  id="description" cols="30" rows="4" placeholder="Description" v-model="shift.description"></textarea>
+                </div>
+
+                <div class="field">
+                  <button @click="addShift(shift)" :disabled="!valid" >Add Shift</button>
+                </div>
+
+              </form>
             </div>
           </div>
           <!-- e tab Zoeken -->
@@ -127,11 +143,12 @@
     components: {
       GoToHome,
       Navigator,
-      TabHeaderCollection},
+      TabHeaderCollection
+    },
     name: 'ShiftAdd',
     props: ['users', 'projects', 'selectedproject'],
     data: () => ({
-      currentRoute:'shiftAdd',
+      currentRoute: 'shiftAdd',
       valid: true,
       shift: {name: '', email: ''},
       nameRules: [
@@ -151,7 +168,7 @@
 
         newShift.id = uuid.v4();
         newShift.userId = this.$route.params.userId;
-        if(this.projects[this.selectedproject.id].shifts.length==0){
+        if (this.projects[this.selectedproject.id].shifts.length == 0) {
           this.projects[this.selectedproject.id].shifts = [];
         }
         this.projects[this.selectedproject.id].shifts.push(newShift);
