@@ -70,14 +70,9 @@
   <div id="userShift" class="panelMedium active">
     <a class="panelClose">X</a>
     <div class="accordion">
-      <div class="accordionHeader"><span> < </span> Nieuwe Opdrachtgever <span></span></div>
+      <navigator></navigator>
       <div class="accordionBody active">
-        <div class="tabHeaderCollection">
-          <a href="#Zoeken" class="tabHeader active">Zoeken</a>
-          <a href="#Algemeen" class="tabHeader">Algemeen</a>
-          <a href="#Facturatie" class="tabHeader">Facturatie</a>
-          <a href="#Facturatie" class="tabHeader">Gebruikers</a>
-        </div>
+        <tab-header-collection></tab-header-collection>
         <div class="tabBodyCollection">
 
           <!-- s tab Zoeken -->
@@ -124,9 +119,13 @@
 <script>
 
   import uuid from 'uuid'
+  import TabHeaderCollection from "../../template/TabHeaderCollection";
+  import Navigator from "../../template/Navigator";
 
   export default {
-    components: {},
+    components: {
+      Navigator,
+      TabHeaderCollection},
     name: 'ShiftAdd',
     props: ['users', 'projects', 'selectedproject'],
     data: () => ({

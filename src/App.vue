@@ -20,10 +20,10 @@
     <!-- s header -->
     <div class="header">
       <div class="logo">
-        <img src="/static/map/logo.png">
+        <img src="/static/img/logo.png">
       </div>
       <div class="user">
-        <img src="/static/map/user.png">
+        <img src="/static/img/user.png">
       </div>
     </div>
     <!-- e header -->

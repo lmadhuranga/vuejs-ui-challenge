@@ -1,55 +1,30 @@
 <template id="floorManagersListMenu">
-  <v-container>
-    <v-list>
-      <v-list-group :value="true">
-        <!-- Add new project manager-->
-        <v-list-tile v-bind:key="1000000" @click="">
-          <v-list-tile-content>
-            <v-list-tile-title>
-              <router-link :to="{ path: `/setup/userAdd`}">Add Project Manager</router-link>
-            </v-list-tile-title>
-          </v-list-tile-content>
-          <v-list-tile-action>
-            <v-icon>add</v-icon>
-          </v-list-tile-action>
-        </v-list-tile>
-        <v-list-tile v-bind:key="2000000" @click="">
-          <v-list-tile-content>
-            <v-list-tile-title>
-              <input type="text" placeholder="Search Floor Manager" v-model="search">
-            </v-list-tile-title>
-          </v-list-tile-content>
-          <v-list-tile-action>
-            <v-icon>add</v-icon>
-          </v-list-tile-action>
-        </v-list-tile>
-
-        <!--List the project's shift list-->
-        <v-list-tile v-for="floorManager in filteredFloorManagers" v-bind:key="floorManager.id" @click="">
-          <v-list-tile-content>
-            <v-list-tile-title>
-              <router-link :to="{ path: `/setup/shiftAdd/${floorManager.id}`}">{{floorManager.name}}</router-link>
-            </v-list-tile-title>
-          </v-list-tile-content>
-          <v-list-tile-action>
-            <v-icon>school</v-icon>
-          </v-list-tile-action>
-        </v-list-tile>
-      </v-list-group>
-
-    </v-list>
-  </v-container>
+  <ul>
+    <li>
+      <p><router-link :to="{ path: `/setup/userAdd`}">Add Project Manager</router-link></p>
+      <small>Loet 6, Schagen</small>
+    </li>
+    <li v-for="floorManager in filteredFloorManagers"  >
+      <p><router-link v-bind:key="floorManager.id" :to="{ path: `/setup/shiftAdd/${floorManager.id}`}">{{floorManager.name}}</router-link></p>
+      <small>Stationsweg 1, Breukelen</small>
+    </li>
+  </ul>
 </template>
 
 <script>
   export default {
     components: {},
+    data(){
+      return {
+        search: ''
+      }
+    },
     name: 'FloorManagersListMenu',
     props: ['floorManagers'],
     computed: {
       filteredFloorManagers() {
         return this.floorManagers.filter(floorManager => {
-          return floorManager.type.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+          return floorManager.name.indexOf(this.search.toLowerCase()) > -1
         })
       }
     }

@@ -21,19 +21,6 @@
     z-index: -15;
   }
 
-  .panelMedium .accordionBody {
-    /*padding: 20px;*/
-    display: none;
-  }
-
-  .panelMedium .accordionBody.active {
-    display: block;
-  }
-
-  .panelMedium .accordionHeader {
-    padding: 20px;
-  }
-
   .panelMedium .panelClose {
     position: absolute;
     margin-left: -46px;
@@ -41,24 +28,6 @@
     padding: 7px 10px;
     background: #fff;
     border-radius: 100%;
-  }
-
-  .panelMedium .tabHeaderCollection a {
-    color: #9E9E9E;
-    text-decoration: none;
-    padding-bottom: 10px;
-    border-bottom: 2px solid;
-    width: 100%;
-    text-align: center;
-  }
-
-  .panelMedium .tabHeaderCollection a.active {
-    color: #7c2bad;
-  }
-
-  .panelMedium .tabHeaderCollection {
-    display: flex;
-    justify-content: space-evenly;
   }
 
   .panelMedium .helpText {
@@ -70,14 +39,11 @@
   <div id="userAdd" class="panelMedium active">
     <a class="panelClose">X</a>
     <div class="accordion">
-      <div class="accordionHeader"><span> < </span> Nieuwe Opdrachtgever <span></span></div>
+      <navigator msg="Go To Home" path="/"></navigator>
       <div class="accordionBody active">
-        <div class="tabHeaderCollection">
-          <a href="#Zoeken" class="tabHeader active">Zoeken</a>
-          <a href="#Algemeen" class="tabHeader">Algemeen</a>
-          <a href="#Facturatie" class="tabHeader">Facturatie</a>
-          <a href="#Facturatie" class="tabHeader">Gebruikers</a>
-        </div>
+
+        <tab-header-collection></tab-header-collection>
+
         <div class="tabBodyCollection">
 
           <!-- s tab Zoeken -->
@@ -139,9 +105,13 @@
 
 <script>
   import uuid from 'uuid';
+  import TabHeaderCollection from "../../template/TabHeaderCollection";
+  import Navigator from "../../template/Navigator";
 
   export default {
-    components: {},
+    components: {
+      Navigator,
+      TabHeaderCollection},
     props: ['users'],
     data: () => ({
       valid: true,

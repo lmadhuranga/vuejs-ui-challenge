@@ -50,87 +50,73 @@
 </style>
 
 <template>
-  <div class="homeWraper">
+  <!-- e header -->
+  <div class="startScreen">
+    <h1>Ervaren Freelancers <strong>On-Demand.</strong></h1>
+    <h3>shift bij Loetje aan de Amstel +</h3>
 
-    <div class="left">
-      <!-- s header -->
-      <div class="header">
-        <div class="logo">
-          <img src="/static/img/logo.png">
+    <!-- s wall -->
+    <div class="wall">
+      <form action="/setup/projectsList">
+        <div class="field">
+          <label for="projectList">Project</label>
+          <select id="projectList">
+            <option>Toppers in de ArenA sep '17</option>
+            <option>Toppers in de ArenA oct '18</option>
+          </select>
         </div>
-        <div class="user">
-          <img src="/static/img/user.png">
+        <div class="field">
+          <label for="projectList">Functie</label>
+          <select id="projectList">
+            <option>Bediening: Hardwerkende ent</option>
+            <option>End: Hardwerkende ent</option>
+          </select>
         </div>
-      </div>
-      <!-- e header -->
-      <div class="startScreen">
-        <h1>Ervaren Freelancers <strong>On-Demand.</strong></h1>
-        <h3>shift bij Loetje aan de Amstel +</h3>
-
-        <!-- s wall -->
-        <div class="wall">
-          <form action="/setup/projectsList">
-            <div class="field">
-              <label for="projectList">Project</label>
-              <select id="projectList">
-                <option>Toppers in de ArenA sep '17</option>
-                <option>Toppers in de ArenA oct '18</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="projectList">Functie</label>
-              <select id="projectList">
-                <option>Bediening: Hardwerkende ent</option>
-                <option>End: Hardwerkende ent</option>
-              </select>
-            </div>
-            <div class="flex">
-              <div class="field">
-                <label for="projectList">Functie</label>
-                <select id="projectList">
-                  <option>Bediening: Hardwerkende ent</option>
-                  <option>End: Hardwerkende ent</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="projectList">Functie</label>
-                <select id="projectList">
-                  <option>Bediening: Hardwerkende ent</option>
-                  <option>End: Hardwerkende ent</option>
-                </select>
-              </div>
-            </div>
-            <div class="flex">
-              <div class="field">
-                <label for="projectList">Functie</label>
-                <select id="projectList">
-                  <option>Bediening: Hardwerkende ent</option>
-                  <option>End: Hardwerkende ent</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="projectList">Functie</label>
-                <select name="projectList">
-                  <option>Bediening: Hardwerkende ent</option>
-                  <option>End: Hardwerkende ent</option>
-                </select>
-              </div>
-            </div>
-            <hr>
-            <div class="field">
-              <input type="checkbx" name="rememberMe" id="rememberMe">
-              <label for="rememberMe">Maak nog een shift</label>
-            </div>
-            <div class="field">
-              <router-link :to="{ path: '/setup/projectsList'}">Plaats Shift </router-link>
-            </div>
-          </form>
+        <div class="flex">
+          <div class="field">
+            <label for="projectList">Functie</label>
+            <select id="projectList">
+              <option>Bediening: Hardwerkende ent</option>
+              <option>End: Hardwerkende ent</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="projectList">Functie</label>
+            <select id="projectList">
+              <option>Bediening: Hardwerkende ent</option>
+              <option>End: Hardwerkende ent</option>
+            </select>
+          </div>
         </div>
-        <!-- e wall -->
-      </div>
-      <!-- e start screen -->
-    </div> <!--left panel-->
-  </div> <!--homeWraper-->
+        <div class="flex">
+          <div class="field">
+            <label for="projectList">Functie</label>
+            <select id="projectList">
+              <option>Bediening: Hardwerkende ent</option>
+              <option>End: Hardwerkende ent</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="projectList">Functie</label>
+            <select name="projectList">
+              <option>Bediening: Hardwerkende ent</option>
+              <option>End: Hardwerkende ent</option>
+            </select>
+          </div>
+        </div>
+        <hr>
+        <div class="field">
+          <input type="checkbx" name="rememberMe" id="rememberMe">
+          <label for="rememberMe">Maak nog een shift</label>
+        </div>
+        <div class="field">
+          <router-link :to="{ path: '/setup/projectsList'}">Plaats Shift </router-link>
+        </div>
+      </form>
+    </div>
+    <!-- e wall -->
+  </div>
+  <!-- e start screen -->
 </template>
 
 <script>

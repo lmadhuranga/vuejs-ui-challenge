@@ -52,8 +52,7 @@
             </label>
           </div>
         </form>
-
-        <span class="helpText">Wij helpen je kiezen: <a href="#" @click="selectedShift(project.id)">hoe wil je je prijs instellen?</a> </span>
+        <span class="helpText">Wij helpen je kiezen: <a href="javascript:void(0);" @click="selectedShift(project.id);">hoe wil je je prijs instellen?</a> </span>
       </div>
     </div>
   </div>
