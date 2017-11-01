@@ -67,6 +67,11 @@
     margin-top: 20px;
     display: inline-block;
   }
+
+  .panelMedium h2{
+    padding:30px 20px 10px;
+    font-size: 22px;
+  }
 </style>
 <template>
   <div id="floorManagersList" class="panelMedium active">
