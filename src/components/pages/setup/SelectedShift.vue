@@ -45,6 +45,7 @@
   <div id="selectedShift">
     <!-- s panel small -->
     <div class="wall panelSmall active" style="display: block">
+      <navigator path="/setup/projectsList"></navigator>
       <go-to-home></go-to-home>
       <h2> {{shift.name}} Shift</h2>
       <h3>{{project.name}} Project </h3>
