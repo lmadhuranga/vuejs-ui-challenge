@@ -19,7 +19,8 @@ describe("SetupContainer", () => {
     cmp = createCmp({
       users: users,
       projects: projects,
-      selectedproject:projectId
+      selectedproject: projectId,
+      config: {isSidePanelOpen: true}
     });
   });
 

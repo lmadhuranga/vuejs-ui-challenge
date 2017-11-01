@@ -7,7 +7,7 @@
 <script>
   export default {
     components: {},
-    props:['msg', 'path'],
     name: 'Navigator',
+    props:['msg', 'path'],
   }
 </script>
