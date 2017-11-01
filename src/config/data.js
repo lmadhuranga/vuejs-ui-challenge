@@ -28,13 +28,6 @@ export default {
           iban: 'IbanDetails',
           description: 'description',
           userId: 1
-        },
-        {
-          id: 2,
-          name: 'shift2',
-          iban: 'IbanDetails',
-          description: 'description',
-          userId: 2
         }
       ]
     },
