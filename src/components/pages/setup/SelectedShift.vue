@@ -70,9 +70,9 @@
   <div id="selectedShift" class="panelMedium active">
     <a class="panelClose">X</a>
     <div class="accordion">
-      <div class="accordionHeader"><span> < </span> Nieuwe Opdrachtgever <span></span></div>
+      <navigator msg="Go To Home" path="/setup"></navigator>
       <div class="accordionBody active">
-        <tab-header-collection></tab-header-collection>
+        <tab-header-collection :currentRoute="currentRoute"></tab-header-collection>
         <div class="tabBodyCollection">
 
           <!-- s tab Zoeken -->
@@ -91,11 +91,19 @@
 <script>
   import _ from 'lodash'
   import TabHeaderCollection from "../../template/TabHeaderCollection";
+  import Navigator from "../../template/Navigator";
   export default {
-    components: {TabHeaderCollection},
+    components: {
+      Navigator,
+      TabHeaderCollection},
     name: 'SelectedShift',
     props: ['projects', 'users'],
     methods: {},
+    data(){
+        return {
+          currentRoute:'selectedShift'
+        }
+    },
     computed: {
       shift  () {
         let projectId = this.$route.params.projectId;

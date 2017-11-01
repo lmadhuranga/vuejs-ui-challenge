@@ -39,9 +39,9 @@
   <div id="projectListMenu">
     <div class="accordion" v-for="project in projects" v-bind:key="project.id">
       <div class="accordionHeader"> {{project.name}} <span></span></div>
-      <div class="accordionBody active" @click="selectedShift(project.id, shift.id)">
-        <form class="radioBtnBoxWrap">
-          <div class="radioBtnBox" v-for="shift in project.shifts" v-bind:key="shift.id">
+      <div class="accordionBody active">
+        <div class="radioBtnBoxWrap">
+          <div class="radioBtnBox" v-for="shift in project.shifts" v-bind:key="shift.id" @click="selectedShift(project.id, shift.id)">
             <input type="radio" name="slectShift" id="boxOne">
             <label for="boxOne" class="wall">
               <span class="radioBtnIco"></span>
@@ -51,7 +51,7 @@
                 van de door jou gekozen prijs uurprijs.</p>
             </label>
           </div>
-        </form>
+        </div>
         <span class="helpText">Wij helpen je kiezen: <a href="javascript:void(0);" @click="selectedShift(project.id);">hoe wil je je prijs instellen?</a> </span>
       </div>
     </div>
@@ -79,6 +79,9 @@
           this.$router.push(`/setup/floorManagersList`);
         }
       },
+      mounted(){
+        console.log('mad_msg__projects',this.projects);
+      }
     }
   }
 </script>

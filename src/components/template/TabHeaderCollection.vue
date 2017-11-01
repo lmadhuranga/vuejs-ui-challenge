@@ -20,16 +20,36 @@
 </style>
 <template>
   <div class="tabHeaderCollection">
-    <a href="#Zoeken" class="tabHeader active">Add Manager</a>
-    <a href="#Algemeen" class="tabHeader">Algemeen</a>
-    <a href="#Facturatie" class="tabHeader">Facturatie</a>
-    <a href="#Facturatie" class="tabHeader">Gebruikers</a>
+    <router-link class="tabHeader" :class="{ active: this.floorManagersList}" :to="{ path: this.getSetupUrl('floorManagersList')}">Select Floor Manager</router-link>
+    <router-link class="tabHeader" :class="{ active: this.userAdd}" :to="{ path: this.getSetupUrl('userAdd')}">Add Manager</router-link>
+    <router-link class="tabHeader" :class="{ active: this.shiftAdd}" :to="{ path: this.getSetupUrl('shiftAdd')}">Add Shift</router-link>
+    <router-link class="tabHeader" :class="{ active: this.selectedShift}" :to="{ path: this.getSetupUrl('selectedShift')}">Shift Preview</router-link>
   </div>
 </template>
 
 <script>
   export default {
     components: {},
-    name: 'TabHeaderCollection'
+    props:['currentRoute'],
+    name: 'TabHeaderCollection',
+    methods:{
+      getSetupUrl(url){
+        return `/setup/${url}`;
+      }
+    },
+    computed: {
+      selectedShift(){
+        return this.currentRoute=='selectedShift';
+      },
+      floorManagersList(){
+        return this.currentRoute=='floorManagersList';
+      },
+      userAdd(){
+        return this.currentRoute=='userAdd';
+      },
+      shiftAdd(){
+        return this.currentRoute=='shiftAdd';
+      }
+    }
   }
 </script>

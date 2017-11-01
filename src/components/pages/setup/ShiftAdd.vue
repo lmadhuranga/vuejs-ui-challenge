@@ -70,9 +70,9 @@
   <div id="userShift" class="panelMedium active">
     <a class="panelClose">X</a>
     <div class="accordion">
-      <navigator></navigator>
+      <navigator msg="Go To Add Manager" path="/setup/userAdd"></navigator>
       <div class="accordionBody active">
-        <tab-header-collection></tab-header-collection>
+        <tab-header-collection :currentRoute="currentRoute"></tab-header-collection>
         <div class="tabBodyCollection">
 
           <!-- s tab Zoeken -->
@@ -129,6 +129,7 @@
     name: 'ShiftAdd',
     props: ['users', 'projects', 'selectedproject'],
     data: () => ({
+      currentRoute:'shiftAdd',
       valid: true,
       shift: {name: '', email: ''},
       nameRules: [

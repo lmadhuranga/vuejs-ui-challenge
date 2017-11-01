@@ -72,7 +72,10 @@
       ProjectListMenu
     },
     name: 'ProjectList',
-    props: ['users', 'projects', 'selectedproject']
+    props: ['users', 'projects', 'selectedproject'],
+    mounted(){
+//        console.log('mad_msg__projects',this.projects)
+    }
 
   }
 </script>

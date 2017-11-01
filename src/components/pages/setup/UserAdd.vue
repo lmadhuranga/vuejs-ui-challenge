@@ -39,13 +39,11 @@
   <div id="userAdd" class="panelMedium active">
     <a class="panelClose">X</a>
     <div class="accordion">
-      <navigator msg="Go To Home" path="/"></navigator>
+      <navigator msg="Go To Floor Managers" path="/setup/floorManagersList"></navigator>
       <div class="accordionBody active">
-
-        <tab-header-collection></tab-header-collection>
+        <tab-header-collection :currentRoute="currentRoute"></tab-header-collection>
 
         <div class="tabBodyCollection">
-
           <!-- s tab Zoeken -->
           <div class="tabBody active">
             <div class="wall">
@@ -114,6 +112,7 @@
       TabHeaderCollection},
     props: ['users'],
     data: () => ({
+      currentRoute:'userAdd',
       valid: true,
       user: {name: '', email: ''},
       nameRules: [

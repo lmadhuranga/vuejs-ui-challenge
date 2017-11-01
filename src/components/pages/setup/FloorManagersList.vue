@@ -70,9 +70,9 @@
   <div id="floorManagersList" class="panelMedium active">
     <a class="panelClose">X</a>
     <div class="accordion">
-      <navigator></navigator>
+      <navigator msg="Go To Home" path="/setup/"></navigator>
       <div class="accordionBody active">
-        <tab-header-collection></tab-header-collection>
+        <tab-header-collection :currentRoute="currentRoute"></tab-header-collection>
         <div class="tabBodyCollection">
 
           <!-- s tab Zoeken -->
@@ -99,7 +99,13 @@
       TabHeaderCollection,
       FloorManagersListMenu,
     },
-    props: ['users']
+    name:'floorManagersList',
+    props: ['users'],
+    data(){
+        return {
+          currentRoute:'floorManagersList',
+        }
+    }
 
   }
 </script>
