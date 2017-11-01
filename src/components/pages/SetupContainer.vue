@@ -103,12 +103,8 @@
 </template>
 
 <script>
-  import NavBar from "../template/NavBar.vue";
-
   export default {
-    components: {
-      NavBar,
-    },
+    components: {},
     props: ['users', 'projects', 'selectedproject', 'config'],
     mounted(){
       this.config.isSidePanelOpen = true;
