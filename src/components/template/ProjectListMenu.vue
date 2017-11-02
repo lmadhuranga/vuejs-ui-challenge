@@ -74,7 +74,7 @@
             </label>
           </div>
         </div>
-        <button class="small" @click="selectedShift(project.id);">+</button>
+        <button class="small" @click="selectedShift(project.id);">Add Shift</button>
       </div>
     </div>
   </div>
