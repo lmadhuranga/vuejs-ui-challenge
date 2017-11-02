@@ -7,7 +7,7 @@ import VueRouter from 'vue-router';
 
 describe('ProjectListMenu.vue', () => {
   Vue.use(VueRouter);
-  let cmp, user, shift, projectId, userId, shiftId, shiftIndex, project;
+  let cmp, user, shift, projectId, shiftId, shiftIndex, project;
 
   const createCmp = propsData => shallow(SelectedShift, {
     propsData,
@@ -38,7 +38,4 @@ describe('ProjectListMenu.vue', () => {
     expect(cmp.element).toMatchSnapshot()
   });
 
-  it('should be button click then trigger selectedShift function', () => {
-    // TODO cmp.vm.selectedShift = jest.fn();
-  });
 });

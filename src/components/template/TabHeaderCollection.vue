@@ -20,18 +20,24 @@
 </style>
 <template>
   <div class="tabHeaderCollection">
-    <router-link class="tabHeader" :class="{ active: this.floorManagersList}" :to="{ path: this.getSetupUrl('floorManagersList')}">Select Manager</router-link>
-    <router-link class="tabHeader" :class="{ active: this.userAdd}" :to="{ path: this.getSetupUrl('userAdd')}">Add Manager</router-link>
-    <router-link class="tabHeader" :class="{ active: this.shiftAdd}" :to="{ path: this.getSetupUrl('shiftAdd')}">Add Shift</router-link>
+    <router-link class="tabHeader" :class="{ active: this.floorManagersList}"
+                 :to="{ path: this.getSetupUrl('floorManagersList')}">Select Manager
+    </router-link>
+    <router-link class="tabHeader" :class="{ active: this.userAdd}" :to="{ path: this.getSetupUrl('userAdd')}">
+      Add Manager
+    </router-link>
+    <router-link class="tabHeader" :class="{ active: this.shiftAdd}" :to="{ path: this.getSetupUrl('shiftAdd')}">
+      Add Shift
+    </router-link>
   </div>
 </template>
 
 <script>
   export default {
     components: {},
-    props:['currentRoute'],
+    props: ['currentRoute'],
     name: 'TabHeaderCollection',
-    methods:{
+    methods: {
       /**
        * Get full nested url
        */
@@ -44,13 +50,13 @@
      */
     computed: {
       floorManagersList(){
-        return this.currentRoute==='floorManagersList';
+        return this.currentRoute === 'floorManagersList';
       },
       userAdd(){
-        return this.currentRoute==='userAdd';
+        return this.currentRoute === 'userAdd';
       },
       shiftAdd(){
-        return this.currentRoute==='shiftAdd';
+        return this.currentRoute === 'shiftAdd';
       }
     }
   }

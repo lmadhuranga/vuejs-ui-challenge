@@ -73,7 +73,7 @@
           <div class="tabBody active">
             <div class="wall">
               <h2>Manager Register</h2>
-              <form   v-on:submit.prevent="addUser(user)" lazy-validation>
+              <form v-on:submit.prevent="addUser(user)" lazy-validation>
 
                 <div class="field">
                   <label for="fulName">Full Name</label>
@@ -108,7 +108,7 @@
                 </div>
 
                 <div class="field">
-                  <button >Plaats Shift </button>
+                  <button>Plaats Shift </button>
                 </div>
 
               </form>
@@ -136,7 +136,7 @@
     },
     props: ['users'],
     data: () => ({
-      user:{},
+      user: {},
       currentRoute: 'userAdd',
     }),
     methods: {

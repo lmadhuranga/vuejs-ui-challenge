@@ -35,10 +35,12 @@
     position: absolute;
     visibility: hidden;
   }
-  .panelFooter img{
+
+  .panelFooter img {
     width: 100%;
   }
-  .accordionWrap{
+
+  .accordionWrap {
     height: 87%;
   }
 </style>

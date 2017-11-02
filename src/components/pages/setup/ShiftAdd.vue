@@ -72,19 +72,22 @@
     padding: 10px 20px;
     max-width: 360px;
   }
+
   .field input, .field textarea {
     padding: 6px;
     line-height: 20px;
     width: 100%;
     box-sizing: border-box;
   }
+
   .field label {
     color: #888;
     margin-bottom: 5px;
     display: block;
   }
-  h2{
-    padding:30px 20px 10px;
+
+  h2 {
+    padding: 30px 20px 10px;
     font-size: 22px;
   }
 </style>
@@ -116,11 +119,12 @@
 
                 <div class="field">
                   <label for="description">Description</label>
-                  <textarea  id="description" cols="30" rows="4" placeholder="Description" v-model="shift.description"></textarea>
+                  <textarea id="description" cols="30" rows="4" placeholder="Description"
+                            v-model="shift.description"></textarea>
                 </div>
 
                 <div class="field">
-                  <button >Add Shift</button>
+                  <button>Add Shift</button>
                 </div>
 
               </form>

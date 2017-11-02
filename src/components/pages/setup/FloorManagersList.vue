@@ -68,8 +68,8 @@
     display: inline-block;
   }
 
-  .panelMedium h2{
-    padding:30px 20px 10px;
+  .panelMedium h2 {
+    padding: 30px 20px 10px;
     font-size: 22px;
   }
 </style>
@@ -108,12 +108,12 @@
       TabHeaderCollection,
       FloorManagersListMenu,
     },
-    name:'floorManagersList',
+    name: 'floorManagersList',
     props: ['users'],
     data(){
-        return {
-          currentRoute:'floorManagersList',
-        }
+      return {
+        currentRoute: 'floorManagersList',
+      }
     }
 
   }
