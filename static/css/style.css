@@ -75,6 +75,7 @@ button {
 }
 
 header h2{
-  font-size: 26px;
+  padding:30px 20px 10px;
+  font-size: 22px;
   line-height: 39px;
 }

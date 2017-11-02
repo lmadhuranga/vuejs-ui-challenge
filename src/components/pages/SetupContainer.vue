@@ -33,7 +33,7 @@
       <h3>shift bij Loetje aan de Amstel +</h3>
       <!-- s wall -->
       <div class="wall">
-        <form onsubmit="formSubmit()">
+        <form v-on:submit.prevent="formSubmit()">
           <div class="field">
             <label for="projectList">Project</label>
             <select id="projectList">
@@ -47,7 +47,7 @@
             <label for="rememberMe">Maak nog een shift</label>
           </div>
           <div class="field">
-            <button @click="formSubmit(event)">Plaats Shift</button>
+            <button>Select Project</button>
           </div>
         </form>
       </div>
@@ -67,9 +67,8 @@
   export default {
     components: {},
     methods: {
-      formSubmit(event){
-        event.preventDefault()
-        this.$router.push(`/setup/projectList`);
+      formSubmit(){
+        this.$router.push(`/setup/projectsList`);
       }
     },
     props: ['users', 'projects', 'selectedproject', 'config'],

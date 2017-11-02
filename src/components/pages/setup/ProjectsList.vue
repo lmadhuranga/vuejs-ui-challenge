@@ -48,7 +48,7 @@
     <!-- s panel small -->
     <div class="wall panelSmall active" style="display: block">
       <go-to-home></go-to-home>
-      <navigator msg="Home" path="/setup/"></navigator>
+      <navigator msg="Home" path="/setup"></navigator>
       <header>
         <h2>Projects List</h2>
       </header>

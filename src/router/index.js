@@ -21,7 +21,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default new Router({
   routes: [
     {
-      path: '/setup',
+      path: '/',
       name: 'home',
       component: Home
     },

@@ -32,11 +32,11 @@ export default {
       ]
     },
     2: {
-      id: 1,
+      id: 2,
       name: 'Project 2'
     },
     3: {
-      id: 1,
+      id: 3,
       name: 'Project 3'
     }
   },

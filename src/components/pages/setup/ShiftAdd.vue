@@ -100,16 +100,18 @@
           <!-- s tab Zoeken -->
           <div class="tabBody active">
             <div class="wall">
-              <h2>Shift Add</h2>
-              <form v-model="valid" ref="form" lazy-validation>
+              <header>
+                <h2>Shift Add</h2>
+              </header>
+              <form v-on:submit.prevent="addShift(shift)">
                 <div class="field">
                   <label for="name">Shift Name</label>
-                  <input id="name" type="text" placeholder="Name" v-model="shift.name" :rules="nameRules" :counter="10" required>
+                  <input id="name" type="text" placeholder="Name" v-model="shift.name" required="required">
                 </div>
 
                 <div class="field">
                   <label for="idban">IBAN</label>
-                  <input id="idban" type="text" placeholder="IBAN" v-model="shift.idban"   :counter="10" required>
+                  <input id="idban" type="text" placeholder="IBAN" v-model="shift.idban" required="required">
                 </div>
 
                 <div class="field">
@@ -118,7 +120,7 @@
                 </div>
 
                 <div class="field">
-                  <button @click="addShift(shift)" :disabled="!valid" >Add Shift</button>
+                  <button >Add Shift</button>
                 </div>
 
               </form>
@@ -149,12 +151,7 @@
     props: ['users', 'projects', 'selectedproject'],
     data: () => ({
       currentRoute: 'shiftAdd',
-      valid: true,
       shift: {name: '', email: ''},
-      nameRules: [
-        (v) => !!v || 'Name is required',
-        (v) => v && v.length <= 10 || 'Name must be less than 10 characters'
-      ],
     }),
     methods: {
       /**
@@ -168,7 +165,7 @@
 
         newShift.id = uuid.v4();
         newShift.userId = this.$route.params.userId;
-        if (this.projects[this.selectedproject.id].shifts.length == 0) {
+        if (!this.projects[this.selectedproject.id].shifts || this.projects[this.selectedproject.id].shifts.length == 0) {
           this.projects[this.selectedproject.id].shifts = [];
         }
         this.projects[this.selectedproject.id].shifts.push(newShift);

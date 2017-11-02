@@ -73,18 +73,18 @@
           <div class="tabBody active">
             <div class="wall">
               <h2>Manager Register</h2>
-              <form v-model="valid" onsubmit="addUser(event,user)" lazy-validation>
+              <form   v-on:submit.prevent="addUser(user)" lazy-validation>
 
                 <div class="field">
                   <label for="fulName">Full Name</label>
-                  <input id="fulName" type="text" placeholder="Full Name" v-model="user.name" :rules="nameRules"
-                         maxlength="10" required>
+                  <input id="fulName" type="text" placeholder="Full Name" v-model="user.name"
+                         maxlength="10" required="required">
                 </div>
 
                 <div class="field">
                   <label for="E-mail">E-mail</label>
-                  <input id="E-mail" type="text" placeholder="E-mail" v-model="user.email" :rules="emailRules"
-                         maxlength="10" required>
+                  <input id="E-mail" type="email" placeholder="E-mail" v-model="user.email"
+                         maxlength="10" required="required">
                 </div>
 
                 <div class="field">
@@ -99,16 +99,16 @@
 
                 <div class="field">
                   <label for="BTWNumber">BTW Number</label>
-                  <input id="BTWNumber" type="text" placeholder="Address" v-model="user.btwNumber"></input>
+                  <input id="BTWNumber" type="number" placeholder="Address" v-model="user.btwNumber"></input>
                 </div>
 
                 <div class="field">
                   <label for="KvkNumber">Kvk Number</label>
-                  <input id="KvkNumber" type="text" placeholder="Kvk Number" v-model="user.kvkNumber">
+                  <input id="KvkNumber" type="number" placeholder="Kvk Number" v-model="user.kvkNumber">
                 </div>
 
                 <div class="field">
-                  <button @click="addUser(user)" :disabled="!valid">Plaats Shift </button>
+                  <button >Plaats Shift </button>
                 </div>
 
               </form>
@@ -136,29 +136,17 @@
     },
     props: ['users'],
     data: () => ({
+      user:{},
       currentRoute: 'userAdd',
-      valid: true,
-      user: {name: '', email: ''},
-      nameRules: [
-        (v) => !!v || 'Name is required',
-        (v) => v && v.length <= 10 || 'Name must be less than 10 characters'
-      ],
-      email: '',
-      emailRules: [
-        (v) => !!v || 'E-mail is required',
-        (v) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
-      ],
     }),
     methods: {
       /**
        * Add user to main users array
        * @param newUser
        */
-      addUser (event, newUser) {
-        event.preventDefault();
+      addUser (newUser) {
         newUser.id = uuid.v4();
         this.users.push(newUser);
-        this.user = {name: ''};
         this.goToNext(newUser.id);
       },
       /**
