@@ -78,13 +78,13 @@
                 <div class="field">
                   <label for="fulName">Full Name</label>
                   <input id="fulName" type="text" placeholder="Full Name" v-model="user.name"
-                         maxlength="10" required="required">
+                         maxlength="20" required="required">
                 </div>
 
                 <div class="field">
                   <label for="E-mail">E-mail</label>
                   <input id="E-mail" type="email" placeholder="E-mail" v-model="user.email"
-                         maxlength="10" required="required">
+                         maxlength="50" required="required">
                 </div>
 
                 <div class="field">
@@ -99,7 +99,7 @@
 
                 <div class="field">
                   <label for="BTWNumber">BTW Number</label>
-                  <input id="BTWNumber" type="number" placeholder="Address" v-model="user.btwNumber"></input>
+                  <input id="BTWNumber" type="number" placeholder="BTW Number" v-model="user.btwNumber"></input>
                 </div>
 
                 <div class="field">

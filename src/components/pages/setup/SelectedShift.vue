@@ -24,13 +24,16 @@
     z-index: -15;
   }
 
-  .panelSmall .panelClose {
+  .panelClose {
+    top:0;
     position: absolute;
     margin-left: -46px;
     margin-top: 15px;
-    padding: 7px 10px;
+    padding: 9px 10px 7px;
     background: #fff;
     border-radius: 100%;
+    color: #444;
+    text-decoration: none;
   }
 
   [name="slectShift"] {
@@ -40,6 +43,23 @@
     visibility: hidden;
   }
 
+  .siftDetailWrap p{
+    padding: 10px 0;
+  }
+  .siftDetailWrap strong{
+    color: #888;
+  }
+  .siftDetailWrap{
+    padding: 20px;
+  }
+  hr{
+    margin: 20px 0;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+  }
+  #selectedShift h2 small{
+    font-size: 14px;
+  }
 </style>
 <template>
   <div id="selectedShift">
@@ -48,14 +68,15 @@
       <navigator msg="Projects List" path="/setup/projectsList"></navigator>
       <go-to-home></go-to-home>
       <header>
-        <h2> {{shift.name}} Shift Details</h2>
+        <h2> {{shift.name}} <small>Shift Details</small></h2>
       </header>
-      <p> IBAN Number :{{shift.iban}} </p>
-      <p> Description: {{shift.description}}</p>
-
-      <hr>
-      <h3>Project : {{project.name}}  </h3>
-      <h4>Floor Manager : {{floorManager.name}}</h4>
+      <div class="siftDetailWrap">
+        <p> IBAN Number : <strong>{{shift.iban}}</strong> </p>
+        <p> Description: <strong>{{shift.description}}</strong></p>
+        <hr>
+        <p>Project : <strong>{{project.name}} </strong> </p>
+        <p>Floor Manager : <strong>{{floorManager.name}}</strong></p>
+      </div>
 
       <!-- e accordion wrap -->
       <div class="panelFooter">

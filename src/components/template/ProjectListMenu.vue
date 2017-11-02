@@ -20,23 +20,19 @@
   .panelSmall .radioBtnBox [name="slectShift"]:checked + .wall {
     background: #7664cc;
   }
-
   .panelSmall .accordionBody {
-    /*padding: 20px;*/
+    padding: 10px 20px 20px;
     display: none;
   }
-
   .panelSmall .accordionBody.active {
     display: block;
   }
-
   .panelSmall .accordionHeader {
     padding: 20px;
     border-bottom: 1px solid #ccc;
     border-top: 1px solid #898d98;
-    margin-top: 25px;
+    /*margin-top: 25px;*/
   }
-
   .panelSmall .panelClose {
     position: absolute;
     margin-left: -46px;
@@ -45,15 +41,21 @@
     background: #fff;
     border-radius: 100%;
   }
-
   [name="slectShift"] {
     width: 0;
     height: 0;
     position: absolute;
     visibility: hidden;
   }
+  .helpText{
+    margin-top: 20px;
+    display: inline-block;
+  }
 
-  button.small {
+  .panelSmall button.small{
+    margin-top: 10px;
+  }
+  button.small{
     width: 100px;
     margin-top: 21px;
   }
@@ -65,8 +67,7 @@
       <div class="accordionHeader"> {{project.name}} <span></span></div>
       <div class="accordionBody active">
         <div class="radioBtnBoxWrap">
-          <div class="radioBtnBox" v-for="shift in project.shifts" v-bind:key="shift.id"
-               @click="selectedShift(project.id, shift.id)">
+          <div class="radioBtnBox" v-for="shift in project.shifts" v-bind:key="shift.id" @click="selectedShift(project.id, shift.id)">
             <input type="radio" name="slectShift" id="boxOne">
             <label for="boxOne" class="wall">
               <span class="radioBtnIco"></span>
