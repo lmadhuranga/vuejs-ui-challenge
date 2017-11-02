@@ -41,11 +41,6 @@
               <option v-for="project in projects" v-bind:key="project.id">{{project.name}}</option>
             </select>
           </div>
-          <hr>
-          <div class="field">
-            <input type="checkbx" name="rememberMe" id="rememberMe">
-            <label for="rememberMe">Maak nog een shift</label>
-          </div>
           <div class="field">
             <button>Select Project</button>
           </div>
@@ -71,10 +66,7 @@
         this.$router.push(`/setup/projectsList`);
       }
     },
-    props: ['users', 'projects', 'selectedproject', 'config'],
-    mounted(){
-      this.config.isSidePanelOpen = true;
-    }
+    props: ['users', 'projects', 'selectedproject', 'config']
 
   }
 </script>
