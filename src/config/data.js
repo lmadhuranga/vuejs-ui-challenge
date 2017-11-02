@@ -39,5 +39,8 @@ export default {
       id: 1,
       name: 'Project 3'
     }
+  },
+  headers:{
+    project:'Project'
   }
 }

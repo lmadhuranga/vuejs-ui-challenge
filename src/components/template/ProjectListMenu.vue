@@ -21,7 +21,7 @@
     background: #7664cc;
   }
   .panelSmall .accordionBody {
-    padding: 20px;
+    /*padding: 20px;*/
     display: none;
   }
   .panelSmall .accordionBody.active {
@@ -29,6 +29,9 @@
   }
   .panelSmall .accordionHeader {
     padding: 20px;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #898d98;
+    margin-top: 25px;
   }
   .panelSmall .panelClose {
     position: absolute;
@@ -48,6 +51,11 @@
     margin-top: 20px;
     display: inline-block;
   }
+
+  button.small{
+    width: 100px;
+    margin-top: 21px;
+  }
 </style>
 <template>
   <!-- s accordion wrap -->
@@ -62,12 +70,11 @@
               <span class="radioBtnIco"></span>
               <h3>{{shift.name}}</h3>
               <small>Kiezen Voor zekerheid</small>
-              <p>De prijs past zich aan de vraag aan, maar blijft altijd tussen 80 en 120 procent
-                van de door jou gekozen prijs uurprijs.</p>
+              <p>{{shift.description}}</p>
             </label>
           </div>
         </div>
-        <span class="helpText">Wij helpen je kiezen: <a href="javascript:void(0);" @click="selectedShift(project.id);">hoe wil je je prijs instellen?</a> </span>
+        <button class="small" @click="selectedShift(project.id);">+</button>
       </div>
     </div>
   </div>
@@ -75,6 +82,7 @@
 
 <script>
 
+  import data from '../../config/data';
 
   export default {
     components: {},

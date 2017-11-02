@@ -8,6 +8,10 @@
     right: 0;
   }
 
+  .wall {
+    width: 100%;
+  }
+
   .panelSmall.active:after {
     display: block;
     content: " ";
@@ -40,17 +44,18 @@
 <template>
   <div id="selectedShift">
     <!-- s panel small -->
-    <div class="wall panelSmall active" style="display: block">
-      <navigator msg="Go To Projects List" path="/setup/projectsList"></navigator>
+    <div class="wall panelSmall active">
+      <navigator msg="Projects List" path="/setup/projectsList"></navigator>
       <go-to-home></go-to-home>
-      <h2> {{shift.name}} Shift Details</h2>
+      <header>
+        <h2> {{shift.name}} Shift Details</h2>
+      </header>
       <p> IBAN Number :{{shift.iban}} </p>
       <p> Description: {{shift.description}}</p>
 
       <hr>
       <h3>Project : {{project.name}}  </h3>
       <h4>Floor Manager : {{floorManager.name}}</h4>
-      <router-link :to="{ path: '/setup/projectsList'}">Projects List </router-link>
 
       <!-- e accordion wrap -->
       <div class="panelFooter">
@@ -110,7 +115,7 @@
         let floorManager = _.filter(this.users, (user) => {
           return user.id == this.shift.userId;
         });
-        if(floorManager.length==0){
+        if (floorManager.length == 0) {
           this.$router.push('/setup/projectsList');
         }
         return floorManager[0];

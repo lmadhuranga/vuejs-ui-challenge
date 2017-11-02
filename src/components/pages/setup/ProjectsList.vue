@@ -37,10 +37,9 @@
   }
   .panelFooter img{
     width: 100%;
-    margin-bottom:1px;
   }
-  .panelFooter{
-    
+  .accordionWrap{
+    height: 87%;
   }
 </style>
 
@@ -49,7 +48,10 @@
     <!-- s panel small -->
     <div class="wall panelSmall active" style="display: block">
       <go-to-home></go-to-home>
-      <h2>Project List</h2>
+      <navigator msg="Home" path="/setup/"></navigator>
+      <header>
+        <h2>Projects List</h2>
+      </header>
 
       <div class="accordionWrap">
         <project-list-menu :projects="projects" :selectedproject="selectedproject"></project-list-menu>
@@ -68,9 +70,11 @@
 <script>
   import ProjectListMenu from "../../template/ProjectListMenu";
   import GoToHome from "../../template/GotoHome";
+  import Navigator from "../../template/Navigator";
 
   export default {
     components: {
+      Navigator,
       GoToHome,
       ProjectListMenu
     },
